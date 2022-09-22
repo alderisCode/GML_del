@@ -133,11 +133,13 @@ namespace GML_del
     					if (oi.ObKarto) 
     						{
 								oi.references.Add(new RefInfo(LinesCount+1, GetXMLValue(S), true));
-								oi.lokalnyId = "ref: " + GetXMLValue(S);
-								LokalneId.Add(oi.lokalnyId);
+								oi.lokalnyId = "ref: " + GetXMLValue(S);								
 						}
     					else
-    						{ oi.lokalnyId = GetXMLValue(S); }
+    						{ 
+								oi.lokalnyId = GetXMLValue(S);
+								LokalneId.Add(oi.lokalnyId);
+						}
     				}
 
 					if (S.Contains("xlink:href"))

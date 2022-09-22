@@ -1,8 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-# SharpDevelop 5.1
-VisualStudioVersion = 12.0.20827.3
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GML_del", "GML_del\GML_del.csproj", "{BCD87241-8373-4624-A3BF-1EA8EE3772EB}"
 EndProject
@@ -12,9 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BCD87241-8373-4624-A3BF-1EA8EE3772EB}.Debug|Any CPU.ActiveCfg = Release|x86
-		{BCD87241-8373-4624-A3BF-1EA8EE3772EB}.Debug|Any CPU.Build.0 = Release|x86
+		{BCD87241-8373-4624-A3BF-1EA8EE3772EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCD87241-8373-4624-A3BF-1EA8EE3772EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCD87241-8373-4624-A3BF-1EA8EE3772EB}.Release|Any CPU.ActiveCfg = Release|x86
 		{BCD87241-8373-4624-A3BF-1EA8EE3772EB}.Release|Any CPU.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BD2EF238-C787-4018-BF3A-D72E77C27B7B}
 	EndGlobalSection
 EndGlobal
