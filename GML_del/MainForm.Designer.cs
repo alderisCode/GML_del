@@ -55,6 +55,8 @@ namespace GML_del
 		{
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lbInfo = new System.Windows.Forms.Label();
@@ -62,22 +64,6 @@ namespace GML_del
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Column4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.lbProgress = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,10 +73,27 @@ namespace GML_del
             this.StatusOb = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Column4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbProgress = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -99,16 +102,16 @@ namespace GML_del
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-            this.splitContainer3.Panel1.SuspendLayout();
-            this.splitContainer3.Panel2.SuspendLayout();
-            this.splitContainer3.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -129,6 +132,17 @@ namespace GML_del
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
+            resources.ApplyResources(this.textBox2, "textBox2");
+            this.textBox2.Name = "textBox2";
             // 
             // label1
             // 
@@ -185,122 +199,6 @@ namespace GML_del
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.splitContainer3);
-            resources.ApplyResources(this.tabPage2, "tabPage2");
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column4,
-            this.Column5,
-            this.Column6});
-            resources.ApplyResources(this.dataGridView2, "dataGridView2");
-            this.dataGridView2.Name = "dataGridView2";
-            // 
-            // Column4
-            // 
-            resources.ApplyResources(this.Column4, "Column4");
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            resources.ApplyResources(this.Column5, "Column5");
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            resources.ApplyResources(this.Column6, "Column6");
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // splitContainer2
-            // 
-            resources.ApplyResources(this.splitContainer2, "splitContainer2");
-            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.splitContainer1);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.checkBox1);
-            this.splitContainer2.Panel2.Controls.Add(this.lbProgress);
-            this.splitContainer2.Panel2.Controls.Add(this.progressBar1);
-            this.splitContainer2.Panel2.Controls.Add(this.richTextBox1);
-            this.splitContainer2.Panel2.Controls.Add(this.button4);
-            this.splitContainer2.Panel2.Controls.Add(this.button2);
-            this.splitContainer2.Panel2.Controls.Add(this.button3);
-            // 
-            // lbProgress
-            // 
-            resources.ApplyResources(this.lbProgress, "lbProgress");
-            this.lbProgress.Name = "lbProgress";
-            // 
-            // progressBar1
-            // 
-            resources.ApplyResources(this.progressBar1, "progressBar1");
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(64)))), ((int)(((byte)(74)))));
-            resources.ApplyResources(this.richTextBox1, "richTextBox1");
-            this.richTextBox1.ForeColor = System.Drawing.Color.Lime;
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            // 
-            // button4
-            // 
-            resources.ApplyResources(this.button4, "button4");
-            this.button4.Name = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.Button4Click);
-            // 
-            // button2
-            // 
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2Click);
-            // 
-            // button3
-            // 
-            resources.ApplyResources(this.button3, "button3");
-            this.button3.Name = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Button3Click);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statusLabel});
-            resources.ApplyResources(this.statusStrip1, "statusStrip1");
-            this.statusStrip1.Name = "statusStrip1";
-            // 
-            // statusLabel
-            // 
-            this.statusLabel.Name = "statusLabel";
-            resources.ApplyResources(this.statusLabel, "statusLabel");
             // 
             // Column1
             // 
@@ -365,6 +263,13 @@ namespace GML_del
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.splitContainer3);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // splitContainer3
             // 
             resources.ApplyResources(this.splitContainer3, "splitContainer3");
@@ -379,6 +284,77 @@ namespace GML_del
             // 
             this.splitContainer3.Panel2.Controls.Add(this.label2);
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column4,
+            this.Column5,
+            this.Column6});
+            resources.ApplyResources(this.dataGridView2, "dataGridView2");
+            this.dataGridView2.Name = "dataGridView2";
+            // 
+            // Column4
+            // 
+            resources.ApplyResources(this.Column4, "Column4");
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            resources.ApplyResources(this.Column5, "Column5");
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            resources.ApplyResources(this.Column6, "Column6");
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // splitContainer2
+            // 
+            resources.ApplyResources(this.splitContainer2, "splitContainer2");
+            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.splitContainer1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.checkBox3);
+            this.splitContainer2.Panel2.Controls.Add(this.comboBox1);
+            this.splitContainer2.Panel2.Controls.Add(this.checkBox2);
+            this.splitContainer2.Panel2.Controls.Add(this.checkBox1);
+            this.splitContainer2.Panel2.Controls.Add(this.lbProgress);
+            this.splitContainer2.Panel2.Controls.Add(this.progressBar1);
+            this.splitContainer2.Panel2.Controls.Add(this.richTextBox1);
+            this.splitContainer2.Panel2.Controls.Add(this.button4);
+            this.splitContainer2.Panel2.Controls.Add(this.button2);
+            this.splitContainer2.Panel2.Controls.Add(this.button3);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.comboBox1, "comboBox1");
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            resources.GetString("comboBox1.Items")});
+            this.comboBox1.Name = "comboBox1";
+            // 
+            // checkBox2
+            // 
+            resources.ApplyResources(this.checkBox2, "checkBox2");
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
             // checkBox1
             // 
             resources.ApplyResources(this.checkBox1, "checkBox1");
@@ -387,16 +363,70 @@ namespace GML_del
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // lbProgress
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
-            resources.ApplyResources(this.textBox2, "textBox2");
-            this.textBox2.Name = "textBox2";
+            resources.ApplyResources(this.lbProgress, "lbProgress");
+            this.lbProgress.Name = "lbProgress";
             // 
-            // label3
+            // progressBar1
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
+            resources.ApplyResources(this.progressBar1, "progressBar1");
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(64)))), ((int)(((byte)(74)))));
+            resources.ApplyResources(this.richTextBox1, "richTextBox1");
+            this.richTextBox1.ForeColor = System.Drawing.Color.Lime;
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            // 
+            // button4
+            // 
+            resources.ApplyResources(this.button4, "button4");
+            this.button4.Name = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4Click);
+            // 
+            // button2
+            // 
+            resources.ApplyResources(this.button2, "button2");
+            this.button2.Name = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2Click);
+            // 
+            // button3
+            // 
+            resources.ApplyResources(this.button3, "button3");
+            this.button3.Name = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusLabel});
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
+            this.statusStrip1.Name = "statusStrip1";
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.Name = "statusLabel";
+            resources.ApplyResources(this.statusLabel, "statusLabel");
+            // 
+            // checkBox3
+            // 
+            resources.ApplyResources(this.checkBox3, "checkBox3");
+            this.checkBox3.Checked = true;
+            this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -414,6 +444,10 @@ namespace GML_del
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
@@ -422,10 +456,6 @@ namespace GML_del
             this.splitContainer2.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.splitContainer3.Panel1.ResumeLayout(false);
-            this.splitContainer3.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -450,5 +480,8 @@ namespace GML_del
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox3;
     }
 }

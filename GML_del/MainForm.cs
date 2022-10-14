@@ -144,12 +144,8 @@ namespace GML_del
 
 					if (S.Contains("xlink:href"))
 					{
-						string S2 = S;
-						while (S2.IndexOf(':') > 0)
-						{
-							S2 = S2.Substring(S2.IndexOf(':') + 1);
-						}
-						oi.references.Add(new RefInfo(LinesCount+1, S2.Substring(0, S2.IndexOf('"')), false));
+						string S2 = GetXlinkID(S);
+						oi.references.Add(new RefInfo(LinesCount+1, S2, false));
 					}
 
 					if (S.Contains(":startObiekt>"))
@@ -359,7 +355,7 @@ namespace GML_del
 		{
 			// usunięcie ob. archiwalnych
 			// lista linii od których pominięcie
-			Log("\n\nZapis pliku bez obiektów archiwalnych...");
+			Log("\n\nZapis obiektów do nowego pliku...");
 			Collection<string> obTypes = new Collection<string>();
 			// lista typów obiektów do usunięcia
 			for (int i=0; i<ObjTypes.Count; i++)
@@ -374,12 +370,31 @@ namespace GML_del
 			Collection<string> locIdToDelete = new Collection<string>();
 			foreach (ObjectInfo o in Objects) 
 			{
-				if ((o.Archived) || (obTypes.IndexOf(o.Type)>-1))
+				if (checkBox2.Checked)   // pojedyncze akcje z comboBoxa
+                {
+					switch (comboBox1.SelectedIndex)
+                    {
+						case 0:                                 // tylko ob. usunięte
+							if (!o.Deleted)
+							{
+								o.ToRemove = true;
+								blocks.Add(new LinesBlock(o.LineStart, o.LineEnd));
+							}
+							break;
+						default:
+							break;
+                    }
+					continue;
+                }
+				 
+				
+				if ((o.Archived && checkBox3.Checked) || (obTypes.IndexOf(o.Type)>-1))
 				{
 					blocks.Add(new LinesBlock(o.LineStart, o.LineEnd));
 					if (!o.ObKarto) locIdToDelete.Add(o.lokalnyId);
 					o.ToRemove = true;
 				}
+				
 				if ((o.ObKarto) && (checkBox1.Checked))
                 {
 					//Log("\nKarto: " + o.lokalnyId, Color.LightSteelBlue);
@@ -391,6 +406,7 @@ namespace GML_del
 					}
                 }
 			}
+		
 			foreach (ObjectInfo o in Objects)
 			{
 				if ((o.ObKarto) && (checkBox1.Checked) && (!o.ToRemove))
@@ -464,5 +480,35 @@ namespace GML_del
 		{
 			MessageBox.Show("GML-DEL\nProgram do czyszczenia plików GML.\n\n(C) 2022 Starostwo Powiatowe w Opolu\nFreeware", "O programie");
 		}
-	}
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+			comboBox1.Enabled = checkBox2.Checked;
+			checkBox1.Enabled = !checkBox2.Checked;
+			checkBox3.Enabled = !checkBox2.Checked;
+		}
+
+
+		string GetXlinkID(string txt)
+        {
+			string s = "";
+			string[] sList = txt.Split('"');
+			bool xlink = false;
+			foreach (string t in sList)
+            {
+				if (xlink)
+                {
+					s = t;
+					break;
+                }
+				if (t.IndexOf("xlink:href") >= 0) xlink = true;
+            }
+			if (s.IndexOf(':')>=0)
+            {
+				sList = s.Split(':');
+				s = sList[sList.Length - 1];
+            }
+			return s;
+        }
+    }
 }
