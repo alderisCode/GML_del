@@ -55,6 +55,10 @@ namespace GML_del
 		{
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.cbSilentMode = new System.Windows.Forms.CheckBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,11 +71,11 @@ namespace GML_del
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StartWersji = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KoniecWersji = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KoniecObiektu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusOb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
@@ -81,6 +85,7 @@ namespace GML_del
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -93,7 +98,6 @@ namespace GML_del
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -122,6 +126,10 @@ namespace GML_del
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.cbSilentMode);
+            this.splitContainer1.Panel1.Controls.Add(this.button5);
+            this.splitContainer1.Panel1.Controls.Add(this.label4);
+            this.splitContainer1.Panel1.Controls.Add(this.dateTimePicker1);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.textBox2);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
@@ -133,6 +141,29 @@ namespace GML_del
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
             // 
+            // cbSilentMode
+            // 
+            resources.ApplyResources(this.cbSilentMode, "cbSilentMode");
+            this.cbSilentMode.Name = "cbSilentMode";
+            this.cbSilentMode.UseVisualStyleBackColor = true;
+            this.cbSilentMode.CheckedChanged += new System.EventHandler(this.cbSilentMode_CheckedChanged);
+            // 
+            // button5
+            // 
+            resources.ApplyResources(this.button5, "button5");
+            this.button5.Name = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
+            // dateTimePicker1
+            // 
+            resources.ApplyResources(this.dateTimePicker1, "dateTimePicker1");
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            // 
             // label3
             // 
             resources.ApplyResources(this.label3, "label3");
@@ -140,8 +171,8 @@ namespace GML_del
             // 
             // textBox2
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
             resources.ApplyResources(this.textBox2, "textBox2");
+            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
             this.textBox2.Name = "textBox2";
             // 
             // label1
@@ -189,11 +220,11 @@ namespace GML_del
             this.Column1,
             this.Column2,
             this.Column3,
+            this.Column7,
             this.StartWersji,
             this.KoniecWersji,
             this.KoniecObiektu,
             this.StatusOb,
-            this.Column7,
             this.Column8});
             resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.Name = "dataGridView1";
@@ -220,6 +251,13 @@ namespace GML_del
             resources.ApplyResources(this.Column3, "Column3");
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.Column7, "Column7");
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             // 
             // StartWersji
             // 
@@ -251,14 +289,9 @@ namespace GML_del
             this.StatusOb.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.StatusOb.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // Column7
-            // 
-            resources.ApplyResources(this.Column7, "Column7");
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
             // Column8
             // 
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             resources.ApplyResources(this.Column8, "Column8");
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
@@ -338,6 +371,14 @@ namespace GML_del
             this.splitContainer2.Panel2.Controls.Add(this.button4);
             this.splitContainer2.Panel2.Controls.Add(this.button2);
             this.splitContainer2.Panel2.Controls.Add(this.button3);
+            // 
+            // checkBox3
+            // 
+            resources.ApplyResources(this.checkBox3, "checkBox3");
+            this.checkBox3.Checked = true;
+            this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // comboBox1
             // 
@@ -420,14 +461,6 @@ namespace GML_del
             this.statusLabel.Name = "statusLabel";
             resources.ApplyResources(this.statusLabel, "statusLabel");
             // 
-            // checkBox3
-            // 
-            resources.ApplyResources(this.checkBox3, "checkBox3");
-            this.checkBox3.Checked = true;
-            this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -467,15 +500,6 @@ namespace GML_del
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StartWersji;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KoniecWersji;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KoniecObiektu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StatusOb;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label3;
@@ -483,5 +507,18 @@ namespace GML_del
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartWersji;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KoniecWersji;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KoniecObiektu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StatusOb;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.CheckBox cbSilentMode;
+        private System.Windows.Forms.Button button5;
     }
 }

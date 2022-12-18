@@ -152,11 +152,11 @@ namespace GML_del
     				{
     					oi.StartOb = Convert.ToDateTime(GetXMLValue(S));
     				}
-    				if (S.Contains("<bt:poczatekWersjiObiektu>")) 
+    				if (S.Contains(":poczatekWersjiObiektu") || S.Contains(":startWersjaObiekt")) 
     				{
     					oi.StartWersjiOb = Convert.ToDateTime(GetXMLValue(S));
     				}
-    				if (S.Contains("<bt:koniecWersjiObiektu>")) 
+    				if (S.Contains(":koniecWersjiObiektu") || S.Contains(":koniecWersjaObiekt")) 
     				{
     					oi.KoniecWersjiOb = Convert.ToDateTime(GetXMLValue(S));
 						if (!oi.Deleted) {
@@ -164,7 +164,7 @@ namespace GML_del
                         }
 						
     				}
-    				if (S.Contains(":koniecObiekt>")) 
+    				if (S.Contains(":koniecObiekt")) 
     				{
     					oi.KoniecOb = Convert.ToDateTime(GetXMLValue(S));
 						oi.Deleted = true;
@@ -189,8 +189,8 @@ namespace GML_del
 			{
 			
 				// if (ObI.ObKarto) { continue; }
-				txt = String.Concat(ObI.LineStart.ToString(), "-", ObI.LineEnd.ToString() , ";", ObI.Type, ";", ObI.lokalnyId, ";", 
-				                    Date2Str(ObI.StartWersjiOb), ";", Date2Str(ObI.KoniecWersjiOb), ";", Date2Str(ObI.KoniecOb), ";", " " );
+				txt = String.Concat(ObI.LineStart.ToString(), "-", ObI.LineEnd.ToString() , ";", ObI.Type, ";", ObI.lokalnyId, ";",
+									Date2Str(ObI.StartOb), ";", Date2Str(ObI.StartWersjiOb), ";", Date2Str(ObI.KoniecWersjiOb), ";", Date2Str(ObI.KoniecOb), ";", " " );
 				dataGridView1.Rows.Add(txt.Split(';'));
 			}
 			dataGridView1.ResumeLayout();
@@ -259,54 +259,51 @@ namespace GML_del
 			Log("\nSprawdzam status obiektów... ");
 			progressBar1.Maximum = Objects.Count;
 			progressBar1.Value = 0;
-			progressBar1.Visible = true;
-			lbProgress.Visible = true;
+			if (!cbSilentMode.Checked)
+			{
+				progressBar1.Visible = true;
+				lbProgress.Visible = true;
+			}
 			int archCount = 0;
 			int delCount = 0;
-			for (int i=0; i<Objects.Count-1; i++)
+			dataGridView1.SuspendLayout();              // <---
+			DataGridViewCellStyle style1 = new DataGridViewCellStyle(this.dataGridView1.RowsDefaultCellStyle);
+			style1.ForeColor = Color.DarkRed;
+			style1.BackColor = Color.LightCoral;
+			DataGridViewCellStyle style2 = new DataGridViewCellStyle(this.dataGridView1.RowsDefaultCellStyle);
+			style2.ForeColor = Color.SaddleBrown;
+			style2.BackColor = Color.LightGray;
+			for (int i = 0; i < Objects.Count - 1; i++)
 			{
+				if (!cbSilentMode.Checked)
 				PBValue(i, progressBar1.Maximum);
-				//Log("\n"+i.ToString()+" kwo:"+ Objects[i].KoniecWersjiOb.Year.ToString() + " ko:"+ Objects[i].KoniecOb.Year.ToString());
-				// jeśli koniec wersji, ale nie koniec obiektu
-				//if (Objects[i].KoniecWersjiOb.Year>1 && Objects[i].KoniecOb.Year==1)
-				////if (dataGridView1.Rows[i].Cells[4].Value.ToString() != "-" && dataGridView1.Rows[i].Cells[5].Value.ToString() == "-")
-				//{
-				//	for (int j=0; j < Objects.Count-1; j++)
-				// 	{
-				//		// jeśli znaleziono duplikat 'lokalnyId'
-				//		if (i != j && Objects[i].lokalnyId == Objects[j].lokalnyId)
-				// 		//if (i != j && dataGridView1.Rows[i].Cells[2].Value.ToString() == dataGridView1.Rows[j].Cells[2].Value.ToString() )
-				// 		{
-				// 			// oznacz jako obiekt archiwalny
-				// 			archCount++;
-				//			dataGridView1.Rows[i].Cells[6].Style.ForeColor = Color.SaddleBrown;
-				//			dataGridView1.Rows[i].Cells[6].Style.BackColor = Color.LightGray;
-				//			dataGridView1.Rows[i].Cells[6].Value = "Archiwalny";
-				// 			Objects[i].Archived = true;
-				// 		}
-				// 	}
-				//}
 
 				// jeśli koniec obiektu
 				if (Objects[i].Deleted)
-				//if (dataGridView1.Rows[i].Cells[4].Value.ToString() != "-" && dataGridView1.Rows[i].Cells[5].Value.ToString() != "-")
 				{
 					// oznacz jako obiekt usunięty
 					delCount++;
-                    //dataGridView1.Rows[i].Cells[6].Style.ForeColor = Color.DarkRed;
-                    //dataGridView1.Rows[i].Cells[6].Style.BackColor = Color.LightCoral;
-                    //dataGridView1.Rows[i].Cells[6].Value = "Usunięty";
-                }
+					if (!cbSilentMode.Checked)
+					{
+						dataGridView1.Rows[i].Cells["StatusOb"].Style = style1;
+						dataGridView1.Rows[i].Cells["StatusOb"].Value = "Usunięty";
+					}
+				}
 				// lub jeśli koniec wersji - ob. archiwalny
 				else if (Objects[i].Archived && !Objects[i].Deleted)
-                {
-                    // oznacz jako obiekt archiwalny
-                    archCount++;
-                    //dataGridView1.Rows[i].Cells[6].Style.ForeColor = Color.SaddleBrown;
-                    //dataGridView1.Rows[i].Cells[6].Style.BackColor = Color.LightGray;
-                    //dataGridView1.Rows[i].Cells[6].Value = "Archiwalny";
-                }
+				{
+					// oznacz jako obiekt archiwalny
+					archCount++;
+					if (!cbSilentMode.Checked)
+					{
+						dataGridView1.Rows[i].Cells["StatusOb"].Style = style2;
+						dataGridView1.Rows[i].Cells["StatusOb"].Value = "Archiwalny";
+					}
+				}
 			}
+			
+			dataGridView1.ResumeLayout();
+
 			if (archCount == 0)
 			{
 				Log("\nNie znaleziono obiektów archiwalnych.", Color.LightSkyBlue);
@@ -355,7 +352,7 @@ namespace GML_del
 		{
 			// usunięcie ob. archiwalnych
 			// lista linii od których pominięcie
-			Log("\n\nZapis obiektów do nowego pliku...");
+			Log("\n\nZapis obiektów do nowego pliku.");
 			Collection<string> obTypes = new Collection<string>();
 			// lista typów obiektów do usunięcia
 			for (int i=0; i<ObjTypes.Count; i++)
@@ -366,10 +363,22 @@ namespace GML_del
                 }
             }
 			// bloki linii w pliku do pominięcia
+			Log("\nOznaczanie linii do pominięcia...");
 			Collection<LinesBlock> blocks = new Collection<LinesBlock>();
 			Collection<string> locIdToDelete = new Collection<string>();
+			progressBar1.Maximum = ObCount;
+			progressBar1.Value = 0;
+			progressBar1.Visible = true;
+			lbProgress.Visible = true; 
+			int obc = 0;
 			foreach (ObjectInfo o in Objects) 
 			{
+				obc++;
+				if ((obc / 100) - Math.Truncate((double)(obc / 100)) == 0)
+				{
+					// co setny obiekt...
+					PBValue(obc, ObCount);
+				}
 				if (checkBox2.Checked)   // pojedyncze akcje z comboBoxa
                 {
 					switch (comboBox1.SelectedIndex)
@@ -395,21 +404,34 @@ namespace GML_del
 					o.ToRemove = true;
 				}
 				
-				if ((o.ObKarto) && (checkBox1.Checked))
+				if ((o.ObKarto) && (checkBox1.Checked) && (o.references.Count > 0))
                 {
 					//Log("\nKarto: " + o.lokalnyId, Color.LightSteelBlue);
 					if (LokalneId.IndexOf(o.references[0].lokalnyId) < 0)
-                    {
+					{
 						//Log("\nKarto: "+o.references[0].lokalnyId, Color.LightSteelBlue);
 						blocks.Add(new LinesBlock(o.LineStart, o.LineEnd));
 						o.ToRemove = true;
 					}
                 }
 			}
-		
+
+			// usuwanie obiektów karto z referencją do usuwanych obiektów
+			Log("OK \nOznaczanie ob. karto z relacją do usuwanych obiektów...");
+			progressBar1.Maximum = ObCount;
+			progressBar1.Value = 0;
+			progressBar1.Visible = true;
+			lbProgress.Visible = true; 
+			obc = 0;
 			foreach (ObjectInfo o in Objects)
 			{
-				if ((o.ObKarto) && (checkBox1.Checked) && (!o.ToRemove))
+				obc++;
+				if ((obc / 100) - Math.Truncate((double)(obc / 100)) == 0)
+				{
+					// co setny obiekt...
+					PBValue(obc, ObCount);
+				}
+				if ((o.ObKarto) && (checkBox1.Checked) && (!o.ToRemove) && (o.references.Count > 0))
 				{
 					if (locIdToDelete.IndexOf(o.references[0].lokalnyId) > -1)
 					{
@@ -424,14 +446,15 @@ namespace GML_del
 			string dir = Path.GetDirectoryName(path);
 			string ext = Path.GetExtension(path);
 			path =  Path.Combine(dir, newFileName + ext);
-			Log("\nNowy plik:\n  " + newFileName + ext);
+			Log(" OK\nNowy plik:\n  " + newFileName + ext);
 
 			// zapis	
-
+			Log("\n\nZapisywanie...");
 			progressBar1.Maximum = (int)LinesCount;
 			progressBar1.Value = 0;
 			progressBar1.Visible = true;
 			lbProgress.Visible = true;
+			int linesBlockIdx = 0; 
 			bool lnOk;
 			using (var writer = new StreamWriter(path))
 			{
@@ -440,23 +463,37 @@ namespace GML_del
 				{
 					lnOk = true;
 					PBValue((int)lnCount, progressBar1.Maximum);
+
+					if (lnCount < blocks[linesBlockIdx].lnFrom) 
+						{ lnOk = true; }
+					else if (lnCount >= blocks[linesBlockIdx].lnFrom && lnCount < blocks[linesBlockIdx].lnTo)
+						{ lnOk = false; }
+					else if (lnCount == blocks[linesBlockIdx].lnTo)
+						{
+							lnOk = false;
+							if (linesBlockIdx<blocks.Count-1) { linesBlockIdx++; }
+						}
+					else { lnOk = true; }
 					lnCount++;
 					// jeśli bieżąca linia jest na liście
-					foreach (LinesBlock lb in blocks) 
-					{
-						if (lnCount >= lb.lnFrom && lnCount <= lb.lnTo) { lnOk = false; }
-					}
+					//foreach (LinesBlock lb in blocks) 
+					//{
+					//	if (lnCount >= lb.lnFrom && lnCount <= lb.lnTo) { lnOk = false; }
+					//}
 				
 					if (lnOk) 
 					{ 
 						writer.WriteLine(line); 
 					}
-					
 				}
 			}
 			Log("\nGotowe.");
 			progressBar1.Visible = false;
 			lbProgress.Visible = false;
+
+
+			// zapis 2
+
 
 		}
 
@@ -509,6 +546,21 @@ namespace GML_del
 				s = sList[sList.Length - 1];
             }
 			return s;
+        }
+
+        private void cbSilentMode_CheckedChanged(object sender, EventArgs e)
+        {
+			if (cbSilentMode.Checked)
+            {
+				//progressBar1.Visible = false;
+				//lbProgress.Visible = false;
+			}
+			else
+            {
+				//progressBar1.Visible = true;
+				//lbProgress.Visible = true;
+
+			}
         }
     }
 }
