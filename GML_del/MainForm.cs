@@ -25,6 +25,7 @@ namespace GML_del
 		Collection<ObjectInfo> Objects;
 		Collection<ObjectType> ObjTypes;
 		Collection<string> LokalneId;
+		DateTime startTime, endTime;
 		
 		public MainForm()
 		{
@@ -54,7 +55,7 @@ namespace GML_del
 
 		void Button1Click(object sender, EventArgs e)
 		{
-			progressBar1.Visible = false;
+			EndJob();
 			if (openFileDialog1.ShowDialog() == DialogResult.OK) 
 			{
 				OpenFile(openFileDialog1.FileName);
@@ -259,11 +260,7 @@ namespace GML_del
 			Log("\nSprawdzam status obiektów... ");
 			progressBar1.Maximum = Objects.Count;
 			progressBar1.Value = 0;
-			if (!cbSilentMode.Checked)
-			{
-				progressBar1.Visible = true;
-				lbProgress.Visible = true;
-			}
+			if (!cbSilentMode.Checked) 	{ StartJob(); }
 			int archCount = 0;
 			int delCount = 0;
 			dataGridView1.SuspendLayout();              // <---
@@ -324,8 +321,7 @@ namespace GML_del
 				Log(delCount.ToString(), Color.LightCoral);
 				Log(" ob. usun.", Color.LightCoral);
 			}
-			progressBar1.Visible = false;
-			lbProgress.Visible = false;
+			EndJob();
 		}
 		
 		
@@ -368,8 +364,7 @@ namespace GML_del
 			Collection<string> locIdToDelete = new Collection<string>();
 			progressBar1.Maximum = ObCount;
 			progressBar1.Value = 0;
-			progressBar1.Visible = true;
-			lbProgress.Visible = true; 
+			StartJob();
 			int obc = 0;
 			foreach (ObjectInfo o in Objects) 
 			{
@@ -421,8 +416,7 @@ namespace GML_del
 			Log("OK \nOznaczanie ob. karto z relacją do usuwanych obiektów...");
 			progressBar1.Maximum = ObCount;
 			progressBar1.Value = 0;
-			progressBar1.Visible = true;
-			lbProgress.Visible = true; 
+			StartJob();
 			obc = 0;
 			foreach (ObjectInfo o in Objects)
 			{
@@ -453,8 +447,7 @@ namespace GML_del
 			Log("\n\nZapisywanie...");
 			progressBar1.Maximum = (int)LinesCount;
 			progressBar1.Value = 0;
-			progressBar1.Visible = true;
-			lbProgress.Visible = true;
+			StartJob(); ;
 			int linesBlockIdx = 0; 
 			bool lnOk;
 			using (var writer = new StreamWriter(path))
@@ -489,8 +482,7 @@ namespace GML_del
 				}
 			}
 			Log("\nGotowe.");
-			progressBar1.Visible = false;
-			lbProgress.Visible = false;
+			EndJob(); ;
 
 
 			// zapis 2
@@ -563,5 +555,27 @@ namespace GML_del
 
 			}
         }
-    }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+			var elapsedTime = (DateTime.Now - startTime).TotalSeconds;
+			var totalTime = elapsedTime * progressBar1.Maximum / progressBar1.Value;
+			TimeSpan time = TimeSpan.FromSeconds(elapsedTime);
+			label7.Text = TimeSpan.FromSeconds(elapsedTime).ToString(@"hh\:mm\:ss");
+			label8.Text = TimeSpan.FromSeconds(totalTime-elapsedTime).ToString(@"hh\:mm\:ss");
+		}
+
+        private void StartJob()
+        {
+			startTime = DateTime.Now;
+			timer1.Enabled = true;
+			panel1.Visible = true;
+        }
+
+		private void EndJob()
+		{
+			timer1.Enabled = false;
+			panel1.Visible = false;
+		}
+	}
 }
