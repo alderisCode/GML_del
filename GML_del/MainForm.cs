@@ -24,7 +24,7 @@ namespace GML_del
 		int ObCount = 0;		// liczba obiektów w pliku
 		Collection<ObjectInfo> Objects;
 		Collection<ObjectType> ObjTypes;
-		Collection<string> LokalneId;
+		HashSet<string> LokalneId;
 		DateTime startTime, endTime;
 		
 		public MainForm()
@@ -35,7 +35,7 @@ namespace GML_del
 			this.DragDrop += new DragEventHandler(Form1_DragDrop);
 			Objects = new Collection<ObjectInfo>();
 			ObjTypes = new Collection<ObjectType>();
-			LokalneId = new Collection<string>();			// lista lokalnychId do szybkiego przeszukiwania
+			LokalneId = new HashSet<string>();			// lista lokalnychId do szybkiego przeszukiwania
 			// ---			
 			lbInfo.Text = "";
 		}
@@ -361,7 +361,7 @@ namespace GML_del
 			// bloki linii w pliku do pominięcia
 			Log("\nOznaczanie linii do pominięcia...");
 			Collection<LinesBlock> blocks = new Collection<LinesBlock>();
-			Collection<string> locIdToDelete = new Collection<string>();
+			HashSet<string> locIdToDelete = new HashSet<string>();
 			progressBar1.Maximum = ObCount;
 			progressBar1.Value = 0;
 			StartJob();
@@ -399,10 +399,11 @@ namespace GML_del
 					o.ToRemove = true;
 				}
 				
+				// Ob. karto z referencją do nieistniejących obiektów
 				if ((o.ObKarto) && (checkBox1.Checked) && (o.references.Count > 0))
                 {
 					//Log("\nKarto: " + o.lokalnyId, Color.LightSteelBlue);
-					if (LokalneId.IndexOf(o.references[0].lokalnyId) < 0)
+					if (!LokalneId.Contains(o.references[0].lokalnyId))
 					{
 						//Log("\nKarto: "+o.references[0].lokalnyId, Color.LightSteelBlue);
 						blocks.Add(new LinesBlock(o.LineStart, o.LineEnd));
@@ -426,9 +427,9 @@ namespace GML_del
 					// co setny obiekt...
 					PBValue(obc, ObCount);
 				}
-				if ((o.ObKarto) && (!o.ToRemove))
+				if ((o.ObKarto) && (!o.ToRemove) && (o.references.Count > 0))
 				{
-					if (locIdToDelete.IndexOf(o.references[0].lokalnyId) > -1)
+					if (locIdToDelete.Contains(o.references[0].lokalnyId) )
 					{
 						blocks.Add(new LinesBlock(o.LineStart, o.LineEnd));
 						o.ToRemove = true;
