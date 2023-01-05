@@ -417,6 +417,7 @@ namespace GML_del
 			}
 
 			// usuwanie obiektów karto z referencją do usuwanych obiektów
+			// oraz pomijanych typów obiektów
 			Log("OK \nOznaczanie ob. karto z relacją do usuwanych obiektów...");
 			progressBar1.Maximum = ObCount;
 			progressBar1.Value = 0;
@@ -431,7 +432,7 @@ namespace GML_del
 					// co setny obiekt...
 					PBValue(obc, ObCount);
 				}
-				if ((o.ObKarto) && (checkBox1.Checked) && (!o.ToRemove) && (o.references.Count > 0))
+				if ((o.ObKarto) && (!o.ToRemove))
 				{
 					if (locIdToDelete.IndexOf(o.references[0].lokalnyId) > -1)
 					{
