@@ -31,6 +31,8 @@ namespace GML_del
 		public DateTime KoniecWersjiOb;
 		public Collection<RefInfo> references;
 		public bool ToRemove = false;
+		public string Angle = "brak";					// wartość dla braku kąta obrotu w obiekcie
+		public bool RotateAngle = false;
 		
 		public ObjectInfo()
 		{

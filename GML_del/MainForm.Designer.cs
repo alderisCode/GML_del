@@ -14,17 +14,8 @@ namespace GML_del
 		/// Designer variable used to keep track of non-visual components.
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
-		private System.Windows.Forms.Label lbInfo;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.Button button4;
 		private System.Windows.Forms.DataGridView dataGridView1;
-		private System.Windows.Forms.StatusStrip statusStrip1;
-		private System.Windows.Forms.ToolStripStatusLabel statusLabel;
 		private System.Windows.Forms.SplitContainer splitContainer1;
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.TabPage tabPage1;
@@ -56,23 +47,16 @@ namespace GML_del
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.cbSilentMode = new System.Windows.Forms.CheckBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.chBoxArch = new DarkUI.Controls.DarkCheckBox();
+            this.darkLabel1 = new DarkUI.Controls.DarkLabel();
+            this.lbInfo = new DarkUI.Controls.DarkLabel();
+            this.darkLabel2 = new DarkUI.Controls.DarkLabel();
+            this.chBoxRotateMod = new System.Windows.Forms.CheckBox();
+            this.chBoxSilentMode = new System.Windows.Forms.CheckBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.chBoxRotateNew = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lbInfo = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -91,24 +75,31 @@ namespace GML_del
             this.Column4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.lbProgress = new System.Windows.Forms.Label();
+            this.lbProgress = new DarkUI.Controls.DarkLabel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnUruchom = new DarkUI.Controls.DarkButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.darkStatusStrip1 = new DarkUI.Controls.DarkStatusStrip();
+            this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnAbout = new DarkUI.Controls.DarkButton();
+            this.btnClose = new DarkUI.Controls.DarkButton();
+            this.darkLabel3 = new DarkUI.Controls.DarkLabel();
+            this.lbTime = new DarkUI.Controls.DarkLabel();
+            this.darkLabel4 = new DarkUI.Controls.DarkLabel();
+            this.lbTime2 = new DarkUI.Controls.DarkLabel();
+            this.darkLabel5 = new DarkUI.Controls.DarkLabel();
+            this.chBoxKarto = new DarkUI.Controls.DarkCheckBox();
+            this.chBoxOneJob = new DarkUI.Controls.DarkCheckBox();
+            this.tbFileName = new DarkUI.Controls.DarkTextBox();
+            this.tbKonc = new DarkUI.Controls.DarkTextBox();
+            this.darkButton1 = new DarkUI.Controls.DarkButton();
+            this.cbOneJob = new DarkUI.Controls.DarkComboBox();
+            this.tbAngle = new DarkUI.Controls.DarkTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -131,7 +122,7 @@ namespace GML_del
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
+            this.darkStatusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -142,67 +133,65 @@ namespace GML_del
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
-            this.splitContainer1.Panel1.Controls.Add(this.checkBox5);
-            this.splitContainer1.Panel1.Controls.Add(this.checkBox2);
-            this.splitContainer1.Panel1.Controls.Add(this.cbSilentMode);
-            this.splitContainer1.Panel1.Controls.Add(this.comboBox2);
-            this.splitContainer1.Panel1.Controls.Add(this.button5);
-            this.splitContainer1.Panel1.Controls.Add(this.checkBox4);
-            this.splitContainer1.Panel1.Controls.Add(this.label4);
-            this.splitContainer1.Panel1.Controls.Add(this.checkBox3);
-            this.splitContainer1.Panel1.Controls.Add(this.dateTimePicker1);
-            this.splitContainer1.Panel1.Controls.Add(this.checkBox1);
-            this.splitContainer1.Panel1.Controls.Add(this.label3);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox2);
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.tbAngle);
+            this.splitContainer1.Panel1.Controls.Add(this.cbOneJob);
+            this.splitContainer1.Panel1.Controls.Add(this.darkButton1);
+            this.splitContainer1.Panel1.Controls.Add(this.tbKonc);
+            this.splitContainer1.Panel1.Controls.Add(this.tbFileName);
+            this.splitContainer1.Panel1.Controls.Add(this.chBoxOneJob);
+            this.splitContainer1.Panel1.Controls.Add(this.chBoxKarto);
+            this.splitContainer1.Panel1.Controls.Add(this.chBoxArch);
+            this.splitContainer1.Panel1.Controls.Add(this.darkLabel1);
             this.splitContainer1.Panel1.Controls.Add(this.lbInfo);
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.darkLabel2);
+            this.splitContainer1.Panel1.Controls.Add(this.chBoxRotateMod);
+            this.splitContainer1.Panel1.Controls.Add(this.chBoxSilentMode);
+            this.splitContainer1.Panel1.Controls.Add(this.button5);
+            this.splitContainer1.Panel1.Controls.Add(this.chBoxRotateNew);
+            this.splitContainer1.Panel1.Controls.Add(this.label4);
+            this.splitContainer1.Panel1.Controls.Add(this.dateTimePicker1);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
             // 
-            // comboBox1
+            // chBoxArch
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.comboBox1, "comboBox1");
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            resources.GetString("comboBox1.Items")});
-            this.comboBox1.Name = "comboBox1";
+            resources.ApplyResources(this.chBoxArch, "chBoxArch");
+            this.chBoxArch.Checked = true;
+            this.chBoxArch.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chBoxArch.Name = "chBoxArch";
             // 
-            // checkBox5
+            // darkLabel1
             // 
-            resources.ApplyResources(this.checkBox5, "checkBox5");
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.darkLabel1, "darkLabel1");
+            this.darkLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel1.Name = "darkLabel1";
             // 
-            // checkBox2
+            // lbInfo
             // 
-            resources.ApplyResources(this.checkBox2, "checkBox2");
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            resources.ApplyResources(this.lbInfo, "lbInfo");
+            this.lbInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbInfo.Name = "lbInfo";
             // 
-            // cbSilentMode
+            // darkLabel2
             // 
-            resources.ApplyResources(this.cbSilentMode, "cbSilentMode");
-            this.cbSilentMode.Name = "cbSilentMode";
-            this.cbSilentMode.UseVisualStyleBackColor = true;
-            this.cbSilentMode.CheckedChanged += new System.EventHandler(this.cbSilentMode_CheckedChanged);
+            resources.ApplyResources(this.darkLabel2, "darkLabel2");
+            this.darkLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel2.Name = "darkLabel2";
             // 
-            // comboBox2
+            // chBoxRotateMod
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            resources.GetString("comboBox2.Items"),
-            resources.GetString("comboBox2.Items1"),
-            resources.GetString("comboBox2.Items2"),
-            resources.GetString("comboBox2.Items3")});
-            resources.ApplyResources(this.comboBox2, "comboBox2");
-            this.comboBox2.Name = "comboBox2";
+            resources.ApplyResources(this.chBoxRotateMod, "chBoxRotateMod");
+            this.chBoxRotateMod.Name = "chBoxRotateMod";
+            this.chBoxRotateMod.UseVisualStyleBackColor = true;
+            // 
+            // chBoxSilentMode
+            // 
+            resources.ApplyResources(this.chBoxSilentMode, "chBoxSilentMode");
+            this.chBoxSilentMode.Name = "chBoxSilentMode";
+            this.chBoxSilentMode.UseVisualStyleBackColor = true;
+            this.chBoxSilentMode.CheckedChanged += new System.EventHandler(this.cbSilentMode_CheckedChanged);
             // 
             // button5
             // 
@@ -210,71 +199,22 @@ namespace GML_del
             this.button5.Name = "button5";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // chBoxRotateNew
             // 
-            resources.ApplyResources(this.checkBox4, "checkBox4");
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.chBoxRotateNew, "chBoxRotateNew");
+            this.chBoxRotateNew.Name = "chBoxRotateNew";
+            this.chBoxRotateNew.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
             // 
-            // checkBox3
-            // 
-            resources.ApplyResources(this.checkBox3, "checkBox3");
-            this.checkBox3.Checked = true;
-            this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.ControlDark;
             resources.ApplyResources(this.dateTimePicker1, "dateTimePicker1");
             this.dateTimePicker1.Name = "dateTimePicker1";
-            // 
-            // checkBox1
-            // 
-            resources.ApplyResources(this.checkBox1, "checkBox1");
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
-            // 
-            // textBox2
-            // 
-            resources.ApplyResources(this.textBox2, "textBox2");
-            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox2.Name = "textBox2";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
-            // textBox1
-            // 
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            // 
-            // lbInfo
-            // 
-            resources.ApplyResources(this.lbInfo, "lbInfo");
-            this.lbInfo.Name = "lbInfo";
-            // 
-            // button1
-            // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1Click);
             // 
             // tabControl1
             // 
@@ -293,6 +233,7 @@ namespace GML_del
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -393,10 +334,12 @@ namespace GML_del
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.label2);
+            this.splitContainer3.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.splitContainer3.Panel2.Controls.Add(this.darkLabel5);
             // 
             // dataGridView2
             // 
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column4,
@@ -422,11 +365,6 @@ namespace GML_del
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
-            // 
             // splitContainer2
             // 
             resources.ApplyResources(this.splitContainer2, "splitContainer2");
@@ -449,45 +387,25 @@ namespace GML_del
             // 
             // splitContainer4.Panel1
             // 
-            this.splitContainer4.Panel1.Controls.Add(this.panel1);
             this.splitContainer4.Panel1.Controls.Add(this.richTextBox1);
+            this.splitContainer4.Panel1.Controls.Add(this.panel1);
             // 
             // splitContainer4.Panel2
             // 
-            this.splitContainer4.Panel2.Controls.Add(this.button4);
-            this.splitContainer4.Panel2.Controls.Add(this.button3);
-            this.splitContainer4.Panel2.Controls.Add(this.button2);
+            this.splitContainer4.Panel2.Controls.Add(this.btnClose);
+            this.splitContainer4.Panel2.Controls.Add(this.btnAbout);
+            this.splitContainer4.Panel2.Controls.Add(this.btnUruchom);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.lbTime2);
+            this.panel1.Controls.Add(this.darkLabel4);
+            this.panel1.Controls.Add(this.lbTime);
+            this.panel1.Controls.Add(this.darkLabel3);
             this.panel1.Controls.Add(this.progressBar1);
             this.panel1.Controls.Add(this.lbProgress);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            // 
-            // label8
-            // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.Name = "label8";
-            // 
-            // label7
-            // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.Name = "label7";
-            // 
-            // label6
-            // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
             // 
             // progressBar1
             // 
@@ -498,6 +416,7 @@ namespace GML_del
             // lbProgress
             // 
             resources.ApplyResources(this.lbProgress, "lbProgress");
+            this.lbProgress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.lbProgress.Name = "lbProgress";
             // 
             // richTextBox1
@@ -508,55 +427,140 @@ namespace GML_del
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             // 
-            // button4
+            // btnUruchom
             // 
-            resources.ApplyResources(this.button4, "button4");
-            this.button4.Name = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.Button4Click);
-            // 
-            // button3
-            // 
-            resources.ApplyResources(this.button3, "button3");
-            this.button3.Name = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Button3Click);
-            // 
-            // button2
-            // 
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2Click);
+            resources.ApplyResources(this.btnUruchom, "btnUruchom");
+            this.btnUruchom.Image = global::GML_del.Properties.Resources.Blue_Play;
+            this.btnUruchom.ImagePadding = 20;
+            this.btnUruchom.Name = "btnUruchom";
+            this.btnUruchom.Click += new System.EventHandler(this.btnUruchomClick);
             // 
             // openFileDialog1
             // 
+            this.openFileDialog1.DefaultExt = "gml";
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statusLabel});
-            resources.ApplyResources(this.statusStrip1, "statusStrip1");
-            this.statusStrip1.Name = "statusStrip1";
-            // 
-            // statusLabel
-            // 
-            this.statusLabel.Name = "statusLabel";
-            resources.ApplyResources(this.statusLabel, "statusLabel");
+            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
             // timer1
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // darkStatusStrip1
+            // 
+            resources.ApplyResources(this.darkStatusStrip1, "darkStatusStrip1");
+            this.darkStatusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.darkStatusStrip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkStatusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusLabel});
+            this.darkStatusStrip1.Name = "darkStatusStrip1";
+            this.darkStatusStrip1.SizingGrip = false;
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.Name = "statusLabel";
+            resources.ApplyResources(this.statusLabel, "statusLabel");
+            // 
+            // btnAbout
+            // 
+            resources.ApplyResources(this.btnAbout, "btnAbout");
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Click += new System.EventHandler(this.Button3Click);
+            // 
+            // btnClose
+            // 
+            resources.ApplyResources(this.btnClose, "btnClose");
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Click += new System.EventHandler(this.Button2Click);
+            // 
+            // darkLabel3
+            // 
+            resources.ApplyResources(this.darkLabel3, "darkLabel3");
+            this.darkLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel3.Name = "darkLabel3";
+            // 
+            // lbTime
+            // 
+            resources.ApplyResources(this.lbTime, "lbTime");
+            this.lbTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbTime.Name = "lbTime";
+            // 
+            // darkLabel4
+            // 
+            resources.ApplyResources(this.darkLabel4, "darkLabel4");
+            this.darkLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel4.Name = "darkLabel4";
+            // 
+            // lbTime2
+            // 
+            resources.ApplyResources(this.lbTime2, "lbTime2");
+            this.lbTime2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbTime2.Name = "lbTime2";
+            // 
+            // darkLabel5
+            // 
+            resources.ApplyResources(this.darkLabel5, "darkLabel5");
+            this.darkLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel5.Name = "darkLabel5";
+            // 
+            // chBoxKarto
+            // 
+            resources.ApplyResources(this.chBoxKarto, "chBoxKarto");
+            this.chBoxKarto.Checked = true;
+            this.chBoxKarto.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chBoxKarto.Name = "chBoxKarto";
+            // 
+            // chBoxOneJob
+            // 
+            resources.ApplyResources(this.chBoxOneJob, "chBoxOneJob");
+            this.chBoxOneJob.Name = "chBoxOneJob";
+            this.chBoxOneJob.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // tbFileName
+            // 
+            resources.ApplyResources(this.tbFileName, "tbFileName");
+            this.tbFileName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.tbFileName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbFileName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.tbFileName.Name = "tbFileName";
+            // 
+            // tbKonc
+            // 
+            this.tbKonc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.tbKonc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbKonc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            resources.ApplyResources(this.tbKonc, "tbKonc");
+            this.tbKonc.Name = "tbKonc";
+            // 
+            // darkButton1
+            // 
+            resources.ApplyResources(this.darkButton1, "darkButton1");
+            this.darkButton1.Name = "darkButton1";
+            this.darkButton1.Click += new System.EventHandler(this.Button1Click);
+            // 
+            // cbOneJob
+            // 
+            resources.ApplyResources(this.cbOneJob, "cbOneJob");
+            this.cbOneJob.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbOneJob.FormattingEnabled = true;
+            this.cbOneJob.Items.AddRange(new object[] {
+            resources.GetString("cbOneJob.Items")});
+            this.cbOneJob.Name = "cbOneJob";
+            // 
+            // tbAngle
+            // 
+            resources.ApplyResources(this.tbAngle, "tbAngle");
+            this.tbAngle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.tbAngle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbAngle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.tbAngle.Name = "tbAngle";
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer2);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.darkStatusStrip1);
             this.Name = "MainForm";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -582,26 +586,17 @@ namespace GML_del
             this.splitContainer4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.darkStatusStrip1.ResumeLayout(false);
+            this.darkStatusStrip1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
 		}
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label lbProgress;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.SplitContainer splitContainer3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -613,17 +608,34 @@ namespace GML_del
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.CheckBox cbSilentMode;
+        private System.Windows.Forms.CheckBox chBoxSilentMode;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox chBoxRotateMod;
+        private System.Windows.Forms.CheckBox chBoxRotateNew;
         private System.Windows.Forms.SplitContainer splitContainer4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Timer timer1;
+        private DarkUI.Controls.DarkLabel darkLabel2;
+        private DarkUI.Controls.DarkLabel darkLabel1;
+        private DarkUI.Controls.DarkLabel lbInfo;
+        private DarkUI.Controls.DarkCheckBox chBoxArch;
+        private DarkUI.Controls.DarkLabel lbProgress;
+        private DarkUI.Controls.DarkButton btnUruchom;
+        private DarkUI.Controls.DarkStatusStrip darkStatusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel statusLabel;
+        private DarkUI.Controls.DarkCheckBox chBoxOneJob;
+        private DarkUI.Controls.DarkCheckBox chBoxKarto;
+        private DarkUI.Controls.DarkLabel darkLabel5;
+        private DarkUI.Controls.DarkLabel lbTime2;
+        private DarkUI.Controls.DarkLabel darkLabel4;
+        private DarkUI.Controls.DarkLabel lbTime;
+        private DarkUI.Controls.DarkLabel darkLabel3;
+        private DarkUI.Controls.DarkButton btnClose;
+        private DarkUI.Controls.DarkButton btnAbout;
+        private DarkUI.Controls.DarkTextBox tbFileName;
+        private DarkUI.Controls.DarkComboBox cbOneJob;
+        private DarkUI.Controls.DarkButton darkButton1;
+        private DarkUI.Controls.DarkTextBox tbKonc;
+        private DarkUI.Controls.DarkTextBox tbAngle;
     }
 }

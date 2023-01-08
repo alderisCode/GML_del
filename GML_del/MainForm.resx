@@ -128,156 +128,383 @@
   <data name="splitContainer1.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
+  <data name="tbAngle.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="comboBox1.Enabled" type="System.Boolean, mscorlib">
+  <data name="tbAngle.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="comboBox1.Items" xml:space="preserve">
+  <data name="tbAngle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>625, 141</value>
+  </data>
+  <data name="tbAngle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="tbAngle.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="tbAngle.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tbAngle.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;tbAngle.Name" xml:space="preserve">
+    <value>tbAngle</value>
+  </data>
+  <data name="&gt;&gt;tbAngle.Type" xml:space="preserve">
+    <value>DarkUI.Controls.DarkTextBox, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;tbAngle.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;tbAngle.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbOneJob.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="cbOneJob.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="cbOneJob.Items" xml:space="preserve">
     <value>Zostaw tylko obiekty usunięte</value>
   </data>
-  <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>794, 94</value>
+  <data name="cbOneJob.Location" type="System.Drawing.Point, System.Drawing">
+    <value>764, 94</value>
   </data>
-  <data name="comboBox1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cbOneJob.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 21</value>
   </data>
-  <data name="comboBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+  <data name="cbOneJob.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
   </data>
-  <data name="&gt;&gt;comboBox1.Name" xml:space="preserve">
-    <value>comboBox1</value>
+  <data name="&gt;&gt;cbOneJob.Name" xml:space="preserve">
+    <value>cbOneJob</value>
   </data>
-  <data name="&gt;&gt;comboBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;cbOneJob.Type" xml:space="preserve">
+    <value>DarkUI.Controls.DarkComboBox, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;comboBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbOneJob.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
   </data>
-  <data name="&gt;&gt;comboBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="checkBox5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>522, 164</value>
-  </data>
-  <data name="checkBox5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 17</value>
-  </data>
-  <data name="checkBox5.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="checkBox5.Text" xml:space="preserve">
-    <value>obracaj też obiekty zmodyfikowane</value>
-  </data>
-  <data name="&gt;&gt;checkBox5.Name" xml:space="preserve">
-    <value>checkBox5</value>
-  </data>
-  <data name="&gt;&gt;checkBox5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox5.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;checkBox5.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbOneJob.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="checkBox2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="darkButton1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
-  <data name="checkBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>794, 78</value>
+  <data name="darkButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>889, 28</value>
   </data>
-  <data name="checkBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 17</value>
+  <data name="darkButton1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
   </data>
-  <data name="checkBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+  <data name="darkButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 23</value>
   </data>
-  <data name="checkBox2.Text" xml:space="preserve">
-    <value>Wykonaj jedynie:</value>
+  <data name="darkButton1.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
   </data>
-  <data name="&gt;&gt;checkBox2.Name" xml:space="preserve">
-    <value>checkBox2</value>
+  <data name="darkButton1.Text" xml:space="preserve">
+    <value>Otwórz...</value>
   </data>
-  <data name="&gt;&gt;checkBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;darkButton1.Name" xml:space="preserve">
+    <value>darkButton1</value>
   </data>
-  <data name="&gt;&gt;checkBox2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;darkButton1.Type" xml:space="preserve">
+    <value>DarkUI.Controls.DarkButton, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;darkButton1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
   </data>
-  <data name="&gt;&gt;checkBox2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;darkButton1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="cbSilentMode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  <data name="tbKonc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 96</value>
   </data>
-  <data name="cbSilentMode.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="tbKonc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 20</value>
   </data>
-  <data name="cbSilentMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>966, 168</value>
+  <data name="tbKonc.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
   </data>
-  <data name="cbSilentMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 17</value>
+  <data name="tbKonc.Text" xml:space="preserve">
+    <value>_bezArch</value>
   </data>
-  <data name="cbSilentMode.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="&gt;&gt;tbKonc.Name" xml:space="preserve">
+    <value>tbKonc</value>
   </data>
-  <data name="cbSilentMode.Text" xml:space="preserve">
-    <value>Tryb cichy</value>
+  <data name="&gt;&gt;tbKonc.Type" xml:space="preserve">
+    <value>DarkUI.Controls.DarkTextBox, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;cbSilentMode.Name" xml:space="preserve">
-    <value>cbSilentMode</value>
-  </data>
-  <data name="&gt;&gt;cbSilentMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbSilentMode.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tbKonc.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
   </data>
-  <data name="&gt;&gt;cbSilentMode.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tbKonc.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="comboBox2.Items" xml:space="preserve">
-    <value>-90</value>
+  <data name="tbFileName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
-  <data name="comboBox2.Items1" xml:space="preserve">
-    <value>0</value>
+  <data name="tbFileName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 29</value>
   </data>
-  <data name="comboBox2.Items2" xml:space="preserve">
-    <value>90</value>
+  <data name="tbFileName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>851, 20</value>
   </data>
-  <data name="comboBox2.Items3" xml:space="preserve">
-    <value>180</value>
+  <data name="tbFileName.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
   </data>
-  <data name="comboBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>648, 143</value>
+  <data name="&gt;&gt;tbFileName.Name" xml:space="preserve">
+    <value>tbFileName</value>
   </data>
-  <data name="comboBox2.MaxLength" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="&gt;&gt;tbFileName.Type" xml:space="preserve">
+    <value>DarkUI.Controls.DarkTextBox, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="comboBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 21</value>
-  </data>
-  <data name="comboBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="comboBox2.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;comboBox2.Name" xml:space="preserve">
-    <value>comboBox2</value>
-  </data>
-  <data name="&gt;&gt;comboBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBox2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tbFileName.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
   </data>
-  <data name="&gt;&gt;comboBox2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tbFileName.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="chBoxOneJob.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="chBoxOneJob.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chBoxOneJob.Location" type="System.Drawing.Point, System.Drawing">
+    <value>764, 75</value>
+  </data>
+  <data name="chBoxOneJob.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 17</value>
+  </data>
+  <data name="chBoxOneJob.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="chBoxOneJob.Text" xml:space="preserve">
+    <value>Wykonaj jedynie</value>
+  </data>
+  <data name="&gt;&gt;chBoxOneJob.Name" xml:space="preserve">
+    <value>chBoxOneJob</value>
+  </data>
+  <data name="&gt;&gt;chBoxOneJob.Type" xml:space="preserve">
+    <value>DarkUI.Controls.DarkCheckBox, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;chBoxOneJob.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;chBoxOneJob.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="chBoxKarto.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="chBoxKarto.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chBoxKarto.Location" type="System.Drawing.Point, System.Drawing">
+    <value>473, 106</value>
+  </data>
+  <data name="chBoxKarto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 30</value>
+  </data>
+  <data name="chBoxKarto.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="chBoxKarto.Text" xml:space="preserve">
+    <value>usunięcie obiektów KARTO z relacją 
+do nieistniejących obiektów
+</value>
+  </data>
+  <data name="&gt;&gt;chBoxKarto.Name" xml:space="preserve">
+    <value>chBoxKarto</value>
+  </data>
+  <data name="&gt;&gt;chBoxKarto.Type" xml:space="preserve">
+    <value>DarkUI.Controls.DarkCheckBox, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;chBoxKarto.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;chBoxKarto.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="chBoxArch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="chBoxArch.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chBoxArch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>473, 80</value>
+  </data>
+  <data name="chBoxArch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 17</value>
+  </data>
+  <data name="chBoxArch.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="chBoxArch.Text" xml:space="preserve">
+    <value>usunięcie obiektów archiwalnych</value>
+  </data>
+  <data name="&gt;&gt;chBoxArch.Name" xml:space="preserve">
+    <value>chBoxArch</value>
+  </data>
+  <data name="&gt;&gt;chBoxArch.Type" xml:space="preserve">
+    <value>DarkUI.Controls.DarkCheckBox, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;chBoxArch.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;chBoxArch.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="darkLabel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="darkLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 80</value>
+  </data>
+  <data name="darkLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 13</value>
+  </data>
+  <data name="darkLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="darkLabel1.Text" xml:space="preserve">
+    <value>Końcówka nazwy nowego pliku:</value>
+  </data>
+  <data name="&gt;&gt;darkLabel1.Name" xml:space="preserve">
+    <value>darkLabel1</value>
+  </data>
+  <data name="&gt;&gt;darkLabel1.Type" xml:space="preserve">
+    <value>DarkUI.Controls.DarkLabel, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;darkLabel1.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;darkLabel1.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lbInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7pt, style=Italic</value>
+  </data>
+  <data name="lbInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 52</value>
+  </data>
+  <data name="lbInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>605, 20</value>
+  </data>
+  <data name="lbInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="lbInfo.Text" xml:space="preserve">
+    <value>lbInfo</value>
+  </data>
+  <data name="&gt;&gt;lbInfo.Name" xml:space="preserve">
+    <value>lbInfo</value>
+  </data>
+  <data name="&gt;&gt;lbInfo.Type" xml:space="preserve">
+    <value>DarkUI.Controls.DarkLabel, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lbInfo.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;lbInfo.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="darkLabel2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="darkLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 13</value>
+  </data>
+  <data name="darkLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 13</value>
+  </data>
+  <data name="darkLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="darkLabel2.Text" xml:space="preserve">
+    <value>Plik GML (źródłowy)</value>
+  </data>
+  <data name="&gt;&gt;darkLabel2.Name" xml:space="preserve">
+    <value>darkLabel2</value>
+  </data>
+  <data name="&gt;&gt;darkLabel2.Type" xml:space="preserve">
+    <value>DarkUI.Controls.DarkLabel, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;darkLabel2.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;darkLabel2.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="chBoxRotateMod.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="chBoxRotateMod.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chBoxRotateMod.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="chBoxRotateMod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>492, 164</value>
+  </data>
+  <data name="chBoxRotateMod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 17</value>
+  </data>
+  <data name="chBoxRotateMod.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="chBoxRotateMod.Text" xml:space="preserve">
+    <value>obracaj też obiekty zmodyfikowane</value>
+  </data>
+  <data name="&gt;&gt;chBoxRotateMod.Name" xml:space="preserve">
+    <value>chBoxRotateMod</value>
+  </data>
+  <data name="&gt;&gt;chBoxRotateMod.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chBoxRotateMod.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;chBoxRotateMod.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="chBoxSilentMode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="chBoxSilentMode.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chBoxSilentMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>936, 168</value>
+  </data>
+  <data name="chBoxSilentMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 17</value>
+  </data>
+  <data name="chBoxSilentMode.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="chBoxSilentMode.Text" xml:space="preserve">
+    <value>Tryb cichy</value>
+  </data>
+  <data name="&gt;&gt;chBoxSilentMode.Name" xml:space="preserve">
+    <value>chBoxSilentMode</value>
+  </data>
+  <data name="&gt;&gt;chBoxSilentMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chBoxSilentMode.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;chBoxSilentMode.ZOrder" xml:space="preserve">
+    <value>12</value>
   </data>
   <data name="button5.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 6.75pt</value>
@@ -304,34 +531,40 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;button5.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>13</value>
   </data>
-  <data name="checkBox4.AutoSize" type="System.Boolean, mscorlib">
+  <data name="chBoxRotateNew.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="chBoxRotateNew.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="checkBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>503, 145</value>
+  <data name="chBoxRotateNew.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="checkBox4.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="chBoxRotateNew.Location" type="System.Drawing.Point, System.Drawing">
+    <value>473, 145</value>
+  </data>
+  <data name="chBoxRotateNew.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 17</value>
   </data>
-  <data name="checkBox4.TabIndex" type="System.Int32, mscorlib">
+  <data name="chBoxRotateNew.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="checkBox4.Text" xml:space="preserve">
+  <data name="chBoxRotateNew.Text" xml:space="preserve">
     <value>obróć nowe obiekty o kąt</value>
   </data>
-  <data name="&gt;&gt;checkBox4.Name" xml:space="preserve">
-    <value>checkBox4</value>
+  <data name="&gt;&gt;chBoxRotateNew.Name" xml:space="preserve">
+    <value>chBoxRotateNew</value>
   </data>
-  <data name="&gt;&gt;checkBox4.Type" xml:space="preserve">
+  <data name="&gt;&gt;chBoxRotateNew.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;checkBox4.Parent" xml:space="preserve">
+  <data name="&gt;&gt;chBoxRotateNew.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
   </data>
-  <data name="&gt;&gt;checkBox4.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;chBoxRotateNew.ZOrder" xml:space="preserve">
+    <value>14</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -358,34 +591,7 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="checkBox3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>503, 79</value>
-  </data>
-  <data name="checkBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 17</value>
-  </data>
-  <data name="checkBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="checkBox3.Text" xml:space="preserve">
-    <value>usunięcie obiektów archiwalnych</value>
-  </data>
-  <data name="&gt;&gt;checkBox3.Name" xml:space="preserve">
-    <value>checkBox3</value>
-  </data>
-  <data name="&gt;&gt;checkBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox3.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;checkBox3.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>15</value>
   </data>
   <data name="dateTimePicker1.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 159</value>
@@ -406,196 +612,6 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;dateTimePicker1.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="checkBox1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>503, 107</value>
-  </data>
-  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 30</value>
-  </data>
-  <data name="checkBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="checkBox1.Text" xml:space="preserve">
-    <value>usunięcie obiektów KARTO z relacją 
-do nieistniejących obiektów</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.Name" xml:space="preserve">
-    <value>checkBox1</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="label3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 79</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 13</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Końcówka nazwy nowego pliku:</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="textBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 95</value>
-  </data>
-  <data name="textBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 20</value>
-  </data>
-  <data name="textBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="textBox2.Text" xml:space="preserve">
-    <value>_bezArch</value>
-  </data>
-  <data name="&gt;&gt;textBox2.Name" xml:space="preserve">
-    <value>textBox2</value>
-  </data>
-  <data name="&gt;&gt;textBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox2.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;textBox2.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 13</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 13</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Plik GML (źródłowy)</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="textBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 29</value>
-  </data>
-  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>874, 20</value>
-  </data>
-  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
-    <value>textBox1</value>
-  </data>
-  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="lbInfo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7pt, style=Italic</value>
-  </data>
-  <data name="lbInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 52</value>
-  </data>
-  <data name="lbInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>598, 20</value>
-  </data>
-  <data name="lbInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lbInfo.Text" xml:space="preserve">
-    <value>lbInfo</value>
-  </data>
-  <data name="&gt;&gt;lbInfo.Name" xml:space="preserve">
-    <value>lbInfo</value>
-  </data>
-  <data name="&gt;&gt;lbInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbInfo.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;lbInfo.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="button1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>919, 29</value>
-  </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 20</value>
-  </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Otwórz...</value>
-  </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
-  </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
@@ -707,7 +723,7 @@ do nieistniejących obiektów</value>
     <value>51</value>
   </data>
   <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1034, 470</value>
+    <value>1004, 464</value>
   </data>
   <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -731,13 +747,13 @@ do nieistniejących obiektów</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1040, 476</value>
+    <value>1010, 470</value>
   </data>
   <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="tabPage1.Text" xml:space="preserve">
-    <value>Lista obiektów</value>
+    <value>Lista obiektów w pliku GML</value>
   </data>
   <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
     <value>tabPage1</value>
@@ -785,7 +801,7 @@ do nieistniejących obiektów</value>
     <value>0, 0</value>
   </data>
   <data name="dataGridView2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>699, 470</value>
+    <value>669, 464</value>
   </data>
   <data name="dataGridView2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -814,37 +830,37 @@ do nieistniejących obiektów</value>
   <data name="&gt;&gt;splitContainer3.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="darkLabel5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="darkLabel5.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt</value>
   </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="darkLabel5.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>331, 93</value>
+  <data name="darkLabel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 80</value>
   </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="darkLabel5.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
+  <data name="darkLabel5.Text" xml:space="preserve">
     <value>Zaznaczone typy obiektów zostaną pominięte podczas przepisywania do nowego pliku GML</value>
   </data>
-  <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="darkLabel5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
+  <data name="&gt;&gt;darkLabel5.Name" xml:space="preserve">
+    <value>darkLabel5</value>
   </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;darkLabel5.Type" xml:space="preserve">
+    <value>DarkUI.Controls.DarkLabel, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;darkLabel5.Parent" xml:space="preserve">
     <value>splitContainer3.Panel2</value>
   </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;darkLabel5.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;splitContainer3.Panel2.Name" xml:space="preserve">
@@ -860,10 +876,10 @@ do nieistniejących obiektów</value>
     <value>1</value>
   </data>
   <data name="splitContainer3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1034, 470</value>
+    <value>1004, 464</value>
   </data>
   <data name="splitContainer3.SplitterDistance" type="System.Int32, mscorlib">
-    <value>699</value>
+    <value>669</value>
   </data>
   <data name="splitContainer3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -887,13 +903,13 @@ do nieistniejących obiektów</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1040, 476</value>
+    <value>1010, 470</value>
   </data>
   <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="tabPage2.Text" xml:space="preserve">
-    <value>Typy obiektów</value>
+    <value>Typy obiektów do usunięcia</value>
   </data>
   <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
     <value>tabPage2</value>
@@ -914,7 +930,7 @@ do nieistniejących obiektów</value>
     <value>0, 0</value>
   </data>
   <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1048, 502</value>
+    <value>1018, 496</value>
   </data>
   <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -944,7 +960,7 @@ do nieistniejących obiektów</value>
     <value>1</value>
   </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1048, 694</value>
+    <value>1018, 688</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
     <value>188</value>
@@ -991,122 +1007,158 @@ do nieistniejących obiektów</value>
   <data name="splitContainer4.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
-  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="richTextBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 82</value>
+  <data name="richTextBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 13</value>
+  <data name="richTextBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>284, 377</value>
   </data>
-  <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+  <data name="richTextBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
   </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>-----</value>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value />
   </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
+  <data name="richTextBox1.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;richTextBox1.Name" xml:space="preserve">
+    <value>richTextBox1</value>
   </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;richTextBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;richTextBox1.Parent" xml:space="preserve">
+    <value>splitContainer4.Panel1</value>
+  </data>
+  <data name="&gt;&gt;richTextBox1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lbTime2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 60</value>
+  <data name="lbTime2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 69</value>
   </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lbTime2.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 13</value>
   </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+  <data name="lbTime2.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
   </data>
-  <data name="label7.Text" xml:space="preserve">
+  <data name="lbTime2.Text" xml:space="preserve">
     <value>-----</value>
   </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
+  <data name="&gt;&gt;lbTime2.Name" xml:space="preserve">
+    <value>lbTime2</value>
   </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lbTime2.Type" xml:space="preserve">
+    <value>DarkUI.Controls.DarkLabel, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lbTime2.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;lbTime2.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+  <data name="darkLabel4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 82</value>
+  <data name="darkLabel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 69</value>
   </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="darkLabel4.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 13</value>
   </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+  <data name="darkLabel4.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
   </data>
-  <data name="label6.Text" xml:space="preserve">
+  <data name="darkLabel4.Text" xml:space="preserve">
     <value>Pozostało:</value>
   </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
+  <data name="darkLabel4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;darkLabel4.Name" xml:space="preserve">
+    <value>darkLabel4</value>
   </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+  <data name="&gt;&gt;darkLabel4.Type" xml:space="preserve">
+    <value>DarkUI.Controls.DarkLabel, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;darkLabel4.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;darkLabel4.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lbTime.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>44, 60</value>
+  <data name="lbTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 49</value>
   </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 13</value>
+  <data name="lbTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 13</value>
   </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+  <data name="lbTime.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Czas:</value>
+  <data name="lbTime.Text" xml:space="preserve">
+    <value>-----</value>
   </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
+  <data name="&gt;&gt;lbTime.Name" xml:space="preserve">
+    <value>lbTime</value>
   </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lbTime.Type" xml:space="preserve">
+    <value>DarkUI.Controls.DarkLabel, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lbTime.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lbTime.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="darkLabel3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="darkLabel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 49</value>
+  </data>
+  <data name="darkLabel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 13</value>
+  </data>
+  <data name="darkLabel3.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="darkLabel3.Text" xml:space="preserve">
+    <value>Czas:</value>
+  </data>
+  <data name="darkLabel3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;darkLabel3.Name" xml:space="preserve">
+    <value>darkLabel3</value>
+  </data>
+  <data name="&gt;&gt;darkLabel3.Type" xml:space="preserve">
+    <value>DarkUI.Controls.DarkLabel, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;darkLabel3.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;darkLabel3.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="progressBar1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
   <data name="progressBar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 20</value>
+    <value>0, 13</value>
   </data>
   <data name="progressBar1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 20</value>
+    <value>284, 20</value>
   </data>
   <data name="progressBar1.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -1130,13 +1182,13 @@ do nieistniejących obiektów</value>
     <value>0, 0</value>
   </data>
   <data name="lbProgress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 20</value>
+    <value>284, 13</value>
   </data>
   <data name="lbProgress.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>19</value>
   </data>
   <data name="lbProgress.Text" xml:space="preserve">
-    <value>label2</value>
+    <value>lbProgress</value>
   </data>
   <data name="lbProgress.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -1145,7 +1197,7 @@ do nieistniejących obiektów</value>
     <value>lbProgress</value>
   </data>
   <data name="&gt;&gt;lbProgress.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>DarkUI.Controls.DarkLabel, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lbProgress.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -1157,10 +1209,10 @@ do nieistniejących obiektów</value>
     <value>Bottom</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 370</value>
+    <value>0, 377</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 109</value>
+    <value>284, 96</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -1178,36 +1230,6 @@ do nieistniejących obiektów</value>
     <value>splitContainer4.Panel1</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="richTextBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="richTextBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="richTextBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 364</value>
-  </data>
-  <data name="richTextBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="richTextBox1.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="richTextBox1.WordWrap" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.Name" xml:space="preserve">
-    <value>richTextBox1</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.Parent" xml:space="preserve">
-    <value>splitContainer4.Panel1</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="&gt;&gt;splitContainer4.Panel1.Name" xml:space="preserve">
@@ -1222,181 +1244,101 @@ do nieistniejących obiektów</value>
   <data name="&gt;&gt;splitContainer4.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="button4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+  <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 147</value>
   </data>
-  <data name="button4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        QmCC
-</value>
+  <data name="btnClose.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
   </data>
-  <data name="button4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 41</value>
+  <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 40</value>
   </data>
-  <data name="button4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 58</value>
+  <data name="btnClose.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
   </data>
-  <data name="button4.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="button4.Text" xml:space="preserve">
-    <value>        URUCHOM</value>
-  </data>
-  <data name="button4.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="&gt;&gt;button4.Name" xml:space="preserve">
-    <value>button4</value>
-  </data>
-  <data name="&gt;&gt;button4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button4.Parent" xml:space="preserve">
-    <value>splitContainer4.Panel2</value>
-  </data>
-  <data name="&gt;&gt;button4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="button3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 144</value>
-  </data>
-  <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 43</value>
-  </data>
-  <data name="button3.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="button3.Text" xml:space="preserve">
-    <value>O...</value>
-  </data>
-  <data name="&gt;&gt;button3.Name" xml:space="preserve">
-    <value>button3</value>
-  </data>
-  <data name="&gt;&gt;button3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
-    <value>splitContainer4.Panel2</value>
-  </data>
-  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="button2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>90, 144</value>
-  </data>
-  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 43</value>
-  </data>
-  <data name="button2.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="button2.Text" xml:space="preserve">
+  <data name="btnClose.Text" xml:space="preserve">
     <value>ZAMKNIJ</value>
   </data>
-  <data name="&gt;&gt;button2.Name" xml:space="preserve">
-    <value>button2</value>
+  <data name="&gt;&gt;btnClose.Name" xml:space="preserve">
+    <value>btnClose</value>
   </data>
-  <data name="&gt;&gt;button2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;btnClose.Type" xml:space="preserve">
+    <value>DarkUI.Controls.DarkButton, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnClose.Parent" xml:space="preserve">
     <value>splitContainer4.Panel2</value>
   </data>
-  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnClose.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnAbout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 147</value>
+  </data>
+  <data name="btnAbout.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="btnAbout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 40</value>
+  </data>
+  <data name="btnAbout.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="btnAbout.Text" xml:space="preserve">
+    <value>O ,,,</value>
+  </data>
+  <data name="&gt;&gt;btnAbout.Name" xml:space="preserve">
+    <value>btnAbout</value>
+  </data>
+  <data name="&gt;&gt;btnAbout.Type" xml:space="preserve">
+    <value>DarkUI.Controls.DarkButton, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnAbout.Parent" xml:space="preserve">
+    <value>splitContainer4.Panel2</value>
+  </data>
+  <data name="&gt;&gt;btnAbout.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnUruchom.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="btnUruchom.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnUruchom.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8pt, style=Bold</value>
+  </data>
+  <data name="btnUruchom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 29</value>
+  </data>
+  <data name="btnUruchom.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="btnUruchom.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="btnUruchom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 77</value>
+  </data>
+  <data name="btnUruchom.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="btnUruchom.Text" xml:space="preserve">
+    <value>U R U C H O M                            \n .
+</value>
+  </data>
+  <data name="btnUruchom.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;btnUruchom.Name" xml:space="preserve">
+    <value>btnUruchom</value>
+  </data>
+  <data name="&gt;&gt;btnUruchom.Type" xml:space="preserve">
+    <value>DarkUI.Controls.DarkButton, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnUruchom.Parent" xml:space="preserve">
+    <value>splitContainer4.Panel2</value>
+  </data>
+  <data name="&gt;&gt;btnUruchom.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="&gt;&gt;splitContainer4.Panel2.Name" xml:space="preserve">
@@ -1412,10 +1354,10 @@ do nieistniejących obiektów</value>
     <value>1</value>
   </data>
   <data name="splitContainer4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 694</value>
+    <value>284, 688</value>
   </data>
   <data name="splitContainer4.SplitterDistance" type="System.Int32, mscorlib">
-    <value>479</value>
+    <value>473</value>
   </data>
   <data name="splitContainer4.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -1445,10 +1387,10 @@ do nieistniejących obiektów</value>
     <value>1</value>
   </data>
   <data name="splitContainer2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1306, 694</value>
+    <value>1306, 688</value>
   </data>
   <data name="splitContainer2.SplitterDistance" type="System.Int32, mscorlib">
-    <value>1048</value>
+    <value>1018</value>
   </data>
   <data name="splitContainer2.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -1468,42 +1410,51 @@ do nieistniejących obiektów</value>
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>150, 17</value>
-  </metadata>
-  <data name="statusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 17</value>
-  </data>
-  <data name="statusLabel.Text" xml:space="preserve">
-    <value>toolStripStatusLabel1</value>
-  </data>
-  <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 694</value>
-  </data>
-  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1306, 22</value>
-  </data>
-  <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="statusStrip1.Text" xml:space="preserve">
-    <value>statusStrip1</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
-    <value>statusStrip1</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="openFileDialog1.Filter" xml:space="preserve">
+    <value>Pliki GML (*.gml)|*.gml|Wszystkie pliki (*.*)|*.*</value>
   </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>266, 17</value>
   </metadata>
+  <metadata name="darkStatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>353, 17</value>
+  </metadata>
+  <data name="darkStatusStrip1.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="statusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 15</value>
+  </data>
+  <data name="statusLabel.Text" xml:space="preserve">
+    <value>toolStripStatusLabel1</value>
+  </data>
+  <data name="darkStatusStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 688</value>
+  </data>
+  <data name="darkStatusStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 5, 0, 3</value>
+  </data>
+  <data name="darkStatusStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1306, 28</value>
+  </data>
+  <data name="darkStatusStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="darkStatusStrip1.Text" xml:space="preserve">
+    <value>darkStatusStrip1</value>
+  </data>
+  <data name="&gt;&gt;darkStatusStrip1.Name" xml:space="preserve">
+    <value>darkStatusStrip1</value>
+  </data>
+  <data name="&gt;&gt;darkStatusStrip1.Type" xml:space="preserve">
+    <value>DarkUI.Controls.DarkStatusStrip, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;darkStatusStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;darkStatusStrip1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1763,22 +1714,22 @@ do nieistniejących obiektów</value>
   <data name="&gt;&gt;openFileDialog1.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;statusLabel.Name" xml:space="preserve">
-    <value>statusLabel</value>
-  </data>
-  <data name="&gt;&gt;statusLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;timer1.Name" xml:space="preserve">
     <value>timer1</value>
   </data>
   <data name="&gt;&gt;timer1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;statusLabel.Name" xml:space="preserve">
+    <value>statusLabel</value>
+  </data>
+  <data name="&gt;&gt;statusLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>DarkUI.Forms.DarkForm, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

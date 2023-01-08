@@ -12,20 +12,22 @@ using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
+using DarkUI.Forms;
 
 namespace GML_del
 {
 	/// <summary>
 	/// Description of MainForm.
 	/// </summary>
-	public partial class MainForm : Form
+	public partial class MainForm : DarkForm
 	{
 		int LinesCount = 0; 	// ilość linii w pliku GML
 		int ObCount = 0;		// liczba obiektów w pliku
 		Collection<ObjectInfo> Objects;
 		Collection<ObjectType> ObjTypes;
-		HashSet<string> LokalneId;
-		DateTime startTime, endTime;
+		HashSet<string> LokalneId;			// wszystkie lokalneId
+		DateTime startTime;
+		float RotAngle = 0;
 		
 		public MainForm()
 		{
@@ -38,6 +40,8 @@ namespace GML_del
 			LokalneId = new HashSet<string>();			// lista lokalnychId do szybkiego przeszukiwania
 			// ---			
 			lbInfo.Text = "";
+			statusLabel.Text = "Wybierz plik GML do przetworzenia.";
+
 		}
 
 
@@ -58,6 +62,7 @@ namespace GML_del
 			EndJob();
 			if (openFileDialog1.ShowDialog() == DialogResult.OK) 
 			{
+				btnUruchom.Enabled = false;
 				OpenFile(openFileDialog1.FileName);
 				
 			}
@@ -65,11 +70,13 @@ namespace GML_del
 		
 		void OpenFile(string fName)
         {
+			statusLabel.Text = "Otwieram plik: " + fName;
+			Application.DoEvents();
 			if (richTextBox1.TextLength > 0)
 			{
 				Log("\n\n-----\n", Color.WhiteSmoke);
 			}
-			textBox1.Text = fName;
+			tbFileName.Text = fName;
 			Objects.Clear();
 			LokalneId.Clear();
 			ObjTypes.Clear();
@@ -80,10 +87,12 @@ namespace GML_del
 
 		void AnalizujPlik(string path) 
 		{
-			Log("Otwieram Plik: " + path);
+			Log("Otwieram Plik: \n   ");
+			Log(path, Color.YellowGreen);
 			lbInfo.Text = "Analizuję plik. Proszę czekać...";
 			LinesCount = 0;
 			ObCount = 0;
+			int ObKartoCount = 0;
 			var oi = new ObjectInfo();
 			bool GmlMember = false;			
 			Log("\nCzytam obiekty z pliku...");
@@ -114,6 +123,7 @@ namespace GML_del
     				{
     					oi.ObKarto = true;
     					oi.Type = "KR_ObiektKarto";
+						ObKartoCount++;
     				}
     				
    					string S = line.Trim();
@@ -142,6 +152,11 @@ namespace GML_del
 								LokalneId.Add(oi.lokalnyId);
 						}
     				}
+
+					if (S.Contains("<bt:katObrotu>"))
+                    {
+						oi.Angle = GetXMLValue(S);
+                    }
 
 					if (S.Contains("xlink:href"))
 					{
@@ -176,12 +191,14 @@ namespace GML_del
     			}
 			}	
 			Log("Ok.\nZnaleziono " + ObCount.ToString() + " ob.");
-			Log("\nWczytuję do tabeli... ");
+			Log("\n   w tym " + ObKartoCount.ToString() + " ob. karto");
+			Log("\n\nWczytuję do tabeli... ");
 			FileInfo fi = new FileInfo(path);
 			string fSize = (Math.Round((double)fi.Length / 1024 / 1024, 3)).ToString() + " MB";
 
 			lbInfo.Text = fSize + ",   " + Convert.ToString(LinesCount) + " linii,   " +
-				Convert.ToString(ObCount) + " obiektów";			
+				Convert.ToString(ObCount) + " obiektów";
+			statusLabel.Text = "Wypełnianie tabeli... ";
 			Application.DoEvents();
 			
 			dataGridView1.SuspendLayout();			
@@ -260,7 +277,7 @@ namespace GML_del
 			Log("\nSprawdzam status obiektów... ");
 			progressBar1.Maximum = Objects.Count;
 			progressBar1.Value = 0;
-			if (!cbSilentMode.Checked) 	{ StartJob(); }
+			if (!chBoxSilentMode.Checked) 	{ StartJob(); }
 			int archCount = 0;
 			int delCount = 0;
 			dataGridView1.SuspendLayout();              // <---
@@ -272,7 +289,7 @@ namespace GML_del
 			style2.BackColor = Color.LightGray;
 			for (int i = 0; i < Objects.Count - 1; i++)
 			{
-				if (!cbSilentMode.Checked)
+				if (!chBoxSilentMode.Checked)
 				PBValue(i, progressBar1.Maximum);
 
 				// jeśli koniec obiektu
@@ -280,7 +297,7 @@ namespace GML_del
 				{
 					// oznacz jako obiekt usunięty
 					delCount++;
-					if (!cbSilentMode.Checked)
+					if (!chBoxSilentMode.Checked)
 					{
 						dataGridView1.Rows[i].Cells["StatusOb"].Style = style1;
 						dataGridView1.Rows[i].Cells["StatusOb"].Value = "Usunięty";
@@ -291,7 +308,7 @@ namespace GML_del
 				{
 					// oznacz jako obiekt archiwalny
 					archCount++;
-					if (!cbSilentMode.Checked)
+					if (!chBoxSilentMode.Checked)
 					{
 						dataGridView1.Rows[i].Cells["StatusOb"].Style = style2;
 						dataGridView1.Rows[i].Cells["StatusOb"].Value = "Archiwalny";
@@ -322,9 +339,10 @@ namespace GML_del
 				Log(" ob. usun.", Color.LightCoral);
 			}
 			EndJob();
+			btnUruchom.Enabled = true;
 		}
-		
-		
+
+
 		// Zamknięcie programu
 		void Button2Click(object sender, EventArgs e)
 		{
@@ -344,13 +362,14 @@ namespace GML_del
 			}
 		}
 		
-		void Button4Click(object sender, EventArgs e)
+		void btnUruchomClick(object sender, EventArgs e)
 		{
+			RotAngle = Convert.ToSingle(tbAngle.Text);
 			// usunięcie ob. archiwalnych
 			// lista linii od których pominięcie
-			Log("\n\nZapis obiektów do nowego pliku.");
-			Collection<string> obTypes = new Collection<string>();
+			Log("\n-\nZapis obiektów do nowego pliku.");
 			// lista typów obiektów do usunięcia
+			HashSet<string> obTypes = new HashSet<string>();				
 			for (int i=0; i<ObjTypes.Count; i++)
             {
 				if (Convert.ToBoolean(dataGridView2.Rows[i].Cells[0].Value))
@@ -359,30 +378,31 @@ namespace GML_del
                 }
             }
 			// bloki linii w pliku do pominięcia
-			Log("\nOznaczanie linii do pominięcia...");
+			Log("\n- Oznaczanie linii do pominięcia...", Color.LimeGreen);
 			Collection<LinesBlock> blocks = new Collection<LinesBlock>();
-			HashSet<string> locIdToDelete = new HashSet<string>();
+			// lista lokalnychId do usunięcia
+			HashSet<string> locIdToDelete = new HashSet<string>();			
 			progressBar1.Maximum = ObCount;
 			progressBar1.Value = 0;
 			StartJob();
 			int obc = 0;
+			int obKarto2Del = 0;
+			int ob2Del = 0;
+			int ang2Rotate = 0;
 			foreach (ObjectInfo o in Objects) 
 			{
 				obc++;
-				if ((obc / 100) - Math.Truncate((double)(obc / 100)) == 0)
-				{
-					// co setny obiekt...
-					PBValue(obc, ObCount);
-				}
-				if (checkBox2.Checked)   // pojedyncze akcje z comboBoxa
+				PBValue(obc, ObCount);
+				if (chBoxOneJob.Checked)   // pojedyncze akcje z comboBoxa
                 {
-					switch (comboBox1.SelectedIndex)
+					switch (cbOneJob.SelectedIndex)
                     {
 						case 0:                                 // tylko ob. usunięte
 							if (!o.Deleted)
 							{
 								o.ToRemove = true;
 								blocks.Add(new LinesBlock(o.LineStart, o.LineEnd));
+								ob2Del++;
 							}
 							break;
 						default:
@@ -391,16 +411,18 @@ namespace GML_del
 					continue;
                 }
 				 
-				
-				if ((o.Archived && checkBox3.Checked) || (obTypes.IndexOf(o.Type)>-1))
+				// jeśli to ob. archiwalny lub typ obiektu do usunięcia
+				if ((o.Archived && chBoxArch.Checked) || (obTypes.Contains(o.Type)))
 				{
 					blocks.Add(new LinesBlock(o.LineStart, o.LineEnd));
+					//jeśli to nie ob.karto, to dodaj lokalnyId do listy do usunięcia
 					if (!o.ObKarto) locIdToDelete.Add(o.lokalnyId);
 					o.ToRemove = true;
+					ob2Del++;
 				}
-				
-				// Ob. karto z referencją do nieistniejących obiektów
-				if ((o.ObKarto) && (checkBox1.Checked) && (o.references.Count > 0))
+
+				// Ob. karto z relacją do nieistniejących obiektów
+				if ((o.ObKarto) && (chBoxKarto.Checked) && (o.references.Count > 0))
                 {
 					//Log("\nKarto: " + o.lokalnyId, Color.LightSteelBlue);
 					if (!LokalneId.Contains(o.references[0].lokalnyId))
@@ -408,17 +430,23 @@ namespace GML_del
 						//Log("\nKarto: "+o.references[0].lokalnyId, Color.LightSteelBlue);
 						blocks.Add(new LinesBlock(o.LineStart, o.LineEnd));
 						o.ToRemove = true;
+						obKarto2Del++;
+						ob2Del++;
 					}
-                }
+				}
 			}
+			if (obKarto2Del > 0) 
+			    Log("\n   Znaleziono " + obKarto2Del.ToString() + " ob. karto z relacją\n      do nieistniejących obiektów.", Color.LightCoral);
 
 			// usuwanie obiektów karto z referencją do usuwanych obiektów
 			// oraz pomijanych typów obiektów
-			Log("OK \nOznaczanie ob. karto z relacją do usuwanych obiektów...");
+			Log("\n- Oznaczanie ob. karto z relacją do usuwanych obiektów...", Color.LimeGreen);
 			progressBar1.Maximum = ObCount;
 			progressBar1.Value = 0;
 			StartJob();
 			obc = 0;
+			obKarto2Del = 0;
+			int obRotate = 0;
 			foreach (ObjectInfo o in Objects)
 			{
 				obc++;
@@ -427,34 +455,66 @@ namespace GML_del
 					// co setny obiekt...
 					PBValue(obc, ObCount);
 				}
-				if ((o.ObKarto) && (!o.ToRemove) && (o.references.Count > 0))
+				if (!o.ToRemove)
 				{
-					if (locIdToDelete.Contains(o.references[0].lokalnyId) )
+					// jeśli ob. karto ma referencję do usuwanego obiektu
+					if ((o.ObKarto) && (o.references.Count > 0))
 					{
-						blocks.Add(new LinesBlock(o.LineStart, o.LineEnd));
-						o.ToRemove = true;
+						if (locIdToDelete.Contains(o.references[0].lokalnyId))
+						{
+							blocks.Add(new LinesBlock(o.LineStart, o.LineEnd));
+							o.ToRemove = true;
+							obKarto2Del++;
+							ob2Del++;
+						}
+					}
+					// jeśli obracamy kąt, a nie jest to obiekt usuwany lucb archiwalny
+					if ((chBoxRotateNew.Checked) && (!o.Deleted) && (!o.Archived) && (o.Angle != "brak"))
+					{
+						// jeśli obiekt jest nowy
+						if (o.StartOb >= dateTimePicker1.Value)
+                        {
+							o.RotateAngle = true;
+							o.Angle = RotateAngle(o.Angle);
+							obRotate++;
+                        }
+						// lub jest to nowa wersja
+						else if ((chBoxRotateMod.Checked) && (o.StartWersjiOb >= dateTimePicker1.Value))
+						{
+							o.RotateAngle = true;
+							o.Angle = RotateAngle(o.Angle);
+							obRotate++;
+						}
 					}
 				}
 			}
+			if (obKarto2Del > 0)
+				Log("\n   Znaleziono " + obKarto2Del.ToString() + " ob. karto z relacją do usuwanych obiektów.", Color.LightCoral);
+			if (obRotate > 0)
+				Log("\n   Znaleziono " + obRotate.ToString() + " kątów do obrócenia. (NIE DZIAŁA)", Color.Gray);
+
+
 			// nazwa nowego pliku
-			string path = textBox1.Text;
-			string newFileName = Path.GetFileNameWithoutExtension(textBox1.Text) + textBox2.Text;
+			string path = tbFileName.Text;
+			string newFileName = Path.GetFileNameWithoutExtension(tbFileName.Text) + tbKonc.Text;
 			string dir = Path.GetDirectoryName(path);
 			string ext = Path.GetExtension(path);
 			path =  Path.Combine(dir, newFileName + ext);
-			Log(" OK\nNowy plik:\n  " + newFileName + ext);
+			Log("\nTworzenie nowego pliku:\n  ");
+			Log(newFileName + ext, Color.YellowGreen);
 
 			// zapis	
 			Log("\n\nZapisywanie...");
 			progressBar1.Maximum = (int)LinesCount;
 			progressBar1.Value = 0;
+			statusLabel.Text = "Zapisywanie...  (" + ob2Del.ToString() + " ob. do pominięcia)";
 			StartJob(); ;
 			int linesBlockIdx = 0; 
 			bool lnOk;
 			using (var writer = new StreamWriter(path))
 			{
 				long lnCount = 0;
-				foreach (var line in File.ReadLines(textBox1.Text))
+				foreach (var line in File.ReadLines(tbFileName.Text))
 				{
 					lnOk = true;
 					PBValue((int)lnCount, progressBar1.Maximum);
@@ -470,12 +530,14 @@ namespace GML_del
 						}
 					else { lnOk = true; }
 					lnCount++;
-					// jeśli bieżąca linia jest na liście
-					//foreach (LinesBlock lb in blocks) 
-					//{
-					//	if (lnCount >= lb.lnFrom && lnCount <= lb.lnTo) { lnOk = false; }
-					//}
-				
+
+					// obrót kąta
+					//if (line.Contains("<bt:katObrotu>"))
+                    //{
+					//	line.Replace
+                    //}
+
+					// jeśli linia ok
 					if (lnOk) 
 					{ 
 						writer.WriteLine(line); 
@@ -483,6 +545,8 @@ namespace GML_del
 				}
 			}
 			Log("\nGotowe.");
+			statusLabel.Text = "Zapis z pominięciem " + ob2Del.ToString() + " obiektów zakończony.";
+
 			EndJob(); ;
 
 
@@ -514,9 +578,9 @@ namespace GML_del
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-			comboBox1.Enabled = checkBox2.Checked;
-			checkBox1.Enabled = !checkBox2.Checked;
-			checkBox3.Enabled = !checkBox2.Checked;
+			cbOneJob.Enabled = chBoxOneJob.Checked;
+			chBoxKarto.Enabled = !chBoxOneJob.Checked;
+			chBoxArch.Enabled = !chBoxOneJob.Checked;
 		}
 
 
@@ -544,7 +608,7 @@ namespace GML_del
 
         private void cbSilentMode_CheckedChanged(object sender, EventArgs e)
         {
-			if (cbSilentMode.Checked)
+			if (chBoxSilentMode.Checked)
             {
 				//progressBar1.Visible = false;
 				//lbProgress.Visible = false;
@@ -562,8 +626,8 @@ namespace GML_del
 			var elapsedTime = (DateTime.Now - startTime).TotalSeconds;
 			var totalTime = elapsedTime * progressBar1.Maximum / progressBar1.Value;
 			TimeSpan time = TimeSpan.FromSeconds(elapsedTime);
-			label7.Text = TimeSpan.FromSeconds(elapsedTime).ToString(@"hh\:mm\:ss");
-			label8.Text = TimeSpan.FromSeconds(totalTime-elapsedTime).ToString(@"hh\:mm\:ss");
+			lbTime.Text = TimeSpan.FromSeconds(elapsedTime).ToString(@"hh\:mm\:ss");
+			lbTime2.Text = TimeSpan.FromSeconds(totalTime-elapsedTime).ToString(@"hh\:mm\:ss");
 		}
 
         private void StartJob()
@@ -577,6 +641,16 @@ namespace GML_del
 		{
 			timer1.Enabled = false;
 			panel1.Visible = false;
+		}
+
+
+		private string RotateAngle(string angle)
+        {
+			float a = Convert.ToSingle(angle);
+			a = a + RotAngle;
+			while (a < 0) { a = a + 400; }
+			while (a > 400) { a = a - 400; }
+			return a.ToString();
 		}
 	}
 }
