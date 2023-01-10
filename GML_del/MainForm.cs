@@ -350,7 +350,7 @@ namespace GML_del
 		}
 		
 		
-		class LinesBlock 
+		public class LinesBlock 
 		{
 			public long lnFrom;
 			public long lnTo;
@@ -460,6 +460,7 @@ namespace GML_del
 					// jeśli ob. karto ma referencję do usuwanego obiektu
 					if ((o.ObKarto) && (o.references.Count > 0))
 					{
+						
 						if (locIdToDelete.Contains(o.references[0].lokalnyId))
 						{
 							blocks.Add(new LinesBlock(o.LineStart, o.LineEnd));
@@ -493,7 +494,11 @@ namespace GML_del
 			if (obRotate > 0)
 				Log("\n   Znaleziono " + obRotate.ToString() + " kątów do obrócenia. (NIE DZIAŁA)", Color.Gray);
 
-
+			// Sortowanie listy bloków do usunięcia
+			Log("\nPorządkowanie listy linii do usunięcia... ");
+			if (blocks.Count>1)
+				blocks = QuickSortBlocks(blocks, 0, blocks.Count - 1);
+			Log("OK\n");
 			// nazwa nowego pliku
 			string path = tbFileName.Text;
 			string newFileName = Path.GetFileNameWithoutExtension(tbFileName.Text) + tbKonc.Text;
@@ -511,24 +516,31 @@ namespace GML_del
 			StartJob(); ;
 			int linesBlockIdx = 0; 
 			bool lnOk;
+
 			using (var writer = new StreamWriter(path))
 			{
 				long lnCount = 0;
 				foreach (var line in File.ReadLines(tbFileName.Text))
 				{
 					lnOk = true;
+
 					PBValue((int)lnCount, progressBar1.Maximum);
 
-					if (lnCount < blocks[linesBlockIdx].lnFrom) 
-						{ lnOk = true; }
-					else if (lnCount >= blocks[linesBlockIdx].lnFrom && lnCount < blocks[linesBlockIdx].lnTo)
-						{ lnOk = false; }
-					else if (lnCount == blocks[linesBlockIdx].lnTo)
-						{
-							lnOk = false;
-							if (linesBlockIdx<blocks.Count-1) { linesBlockIdx++; }
-						}
-					else { lnOk = true; }
+					if (linesBlockIdx < blocks.Count - 1)
+                    {
+                        if (lnCount < blocks[linesBlockIdx].lnFrom)
+                        { lnOk = true; }
+                        else if (lnCount >= blocks[linesBlockIdx].lnFrom && lnCount < blocks[linesBlockIdx].lnTo)
+                        { lnOk = false; }
+                        else if (lnCount == blocks[linesBlockIdx].lnTo)
+                        {
+                            lnOk = false;
+                            linesBlockIdx++;
+                            statusLabel.Text = "Zapisywanie...  (Pominięto " + linesBlockIdx.ToString() +
+                              " z " + ob2Del.ToString() + " ob.)";
+                        }
+						else { lnOk = true; }
+					}
 					lnCount++;
 
 					// obrót kąta
@@ -548,12 +560,43 @@ namespace GML_del
 			statusLabel.Text = "Zapis z pominięciem " + ob2Del.ToString() + " obiektów zakończony.";
 
 			EndJob(); ;
-
-
-			// zapis 2
-
-
 		}
+
+
+		public Collection<LinesBlock> QuickSortBlocks(Collection<LinesBlock> coll, int leftIndex, int rightIndex)
+		{
+			var i = leftIndex;
+			var j = rightIndex;
+			var pivot = coll[leftIndex].lnFrom;
+			while (i <= j)
+			{
+				while (coll[i].lnFrom < pivot)
+				{
+					i++;
+				}
+
+				while (coll[j].lnFrom > pivot)
+				{
+					j--;
+				}
+				if (i <= j)
+				{
+					LinesBlock temp = coll[i];
+					coll[i] = coll[j];
+					coll[j] = temp;
+					i++;
+					j--;
+				}
+			}
+
+			if (leftIndex < j)
+				QuickSortBlocks(coll, leftIndex, j);
+			if (i < rightIndex)
+				QuickSortBlocks(coll, i, rightIndex);
+			return coll;
+		}
+		
+
 
 		void AddObjType(string ot)
         {
@@ -573,10 +616,10 @@ namespace GML_del
 
 		void Button3Click(object sender, EventArgs e)
 		{
-			MessageBox.Show("GML-DEL\nProgram do czyszczenia plików GML.\n\n(C) 2022 Starostwo Powiatowe w Opolu\nFreeware", "O programie");
+			new AboutForm().ShowDialog();
 		}
 
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+		private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
 			cbOneJob.Enabled = chBoxOneJob.Checked;
 			chBoxKarto.Enabled = !chBoxOneJob.Checked;
