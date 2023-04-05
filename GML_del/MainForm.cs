@@ -126,11 +126,12 @@ namespace GML_del
 						ObKartoCount++;
     				}
     				
-   					string S = line.Trim();
+   					string S = line.Trim();											// TYP obiektu
     				if (GmlMember) 
     				{    					
-    					if (S.Contains("<ges:GES_") || S.Contains("<bdz:BDZ_") || S.Contains("<egb:EGB_"))
-    					{
+    					if (S.Contains("<ges:GES_") || S.Contains("<bdz:BDZ_") || 
+							S.Contains("<egb:EGB_") || S.Contains("<ot:OT_"))
+						{
     						GmlMember = false;
     						int i = S.IndexOf(':');
     						int j = S.IndexOf(' ');
@@ -139,7 +140,7 @@ namespace GML_del
     					}
     				}
 
-    				if (S.Contains("<bt:lokalnyId>"))
+    				if (S.Contains("<bt:lokalnyId>"))								// LokalnyId
     				{
     					if (oi.ObKarto) 
     						{
@@ -153,18 +154,18 @@ namespace GML_del
 						}
     				}
 
-					if (S.Contains("<bt:katObrotu>"))
+					if (S.Contains("<bt:katObrotu>"))								// Kąt obrotu
                     {
 						oi.Angle = GetXMLValue(S);
                     }
 
-					if (S.Contains("xlink:href"))
+					if (S.Contains("xlink:href"))									// Referencja
 					{
 						string S2 = GetXlinkID(S);
 						oi.references.Add(new RefInfo(LinesCount+1, S2, false));
 					}
 
-					if (S.Contains(":startObiekt>"))
+					if (S.Contains(":startObiekt>"))								// Cykl życia obiektu
     				{
     					oi.StartOb = Convert.ToDateTime(GetXMLValue(S));
     				}
@@ -177,17 +178,14 @@ namespace GML_del
     					oi.KoniecWersjiOb = Convert.ToDateTime(GetXMLValue(S));
 						if (!oi.Deleted) {
 							oi.Archived = true;
-                        }
-						
+                        }						
     				}
     				if (S.Contains(":koniecObiekt")) 
     				{
     					oi.KoniecOb = Convert.ToDateTime(GetXMLValue(S));
 						oi.Deleted = true;
 						oi.Archived = false;
-    				}
-    				    				
-    					
+    				}    					
     			}
 			}	
 			Log("Ok.\nZnaleziono " + ObCount.ToString() + " ob.");
@@ -204,11 +202,11 @@ namespace GML_del
 			dataGridView1.SuspendLayout();			
 			string txt;
 			foreach (ObjectInfo ObI in Objects) 
-			{
-			
+			{			
 				// if (ObI.ObKarto) { continue; }
 				txt = String.Concat(ObI.LineStart.ToString(), "-", ObI.LineEnd.ToString() , ";", ObI.Type, ";", ObI.lokalnyId, ";",
-									Date2Str(ObI.StartOb), ";", Date2Str(ObI.StartWersjiOb), ";", Date2Str(ObI.KoniecWersjiOb), ";", Date2Str(ObI.KoniecOb), ";", " " );
+									Date2Str(ObI.StartOb), ";", Date2Str(ObI.StartWersjiOb), ";", Date2Str(ObI.KoniecWersjiOb), ";", 
+									Date2Str(ObI.KoniecOb), ";", " ", ";", " ", ";", ObI.Angle);
 				dataGridView1.Rows.Add(txt.Split(';'));
 			}
 			dataGridView1.ResumeLayout();
@@ -350,7 +348,7 @@ namespace GML_del
 		}
 		
 		
-		public class LinesBlock 
+		public class LinesBlock										// Blok linii określających obiekt w GML
 		{
 			public long lnFrom;
 			public long lnTo;
@@ -362,8 +360,8 @@ namespace GML_del
 			}
 		}
 		
-		void btnUruchomClick(object sender, EventArgs e)
-		{
+		void btnUruchomClick(object sender, EventArgs e)						// ZAPIS 
+		{																		// =======================================
 			RotAngle = Convert.ToSingle(tbAngle.Text);
 			// usunięcie ob. archiwalnych
 			// lista linii od których pominięcie

@@ -47,6 +47,13 @@ namespace GML_del
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.tbAngle = new DarkUI.Controls.DarkTextBox();
+            this.cbOneJob = new DarkUI.Controls.DarkComboBox();
+            this.darkButton1 = new DarkUI.Controls.DarkButton();
+            this.tbKonc = new DarkUI.Controls.DarkTextBox();
+            this.tbFileName = new DarkUI.Controls.DarkTextBox();
+            this.chBoxOneJob = new DarkUI.Controls.DarkCheckBox();
+            this.chBoxKarto = new DarkUI.Controls.DarkCheckBox();
             this.chBoxArch = new DarkUI.Controls.DarkCheckBox();
             this.darkLabel1 = new DarkUI.Controls.DarkLabel();
             this.lbInfo = new DarkUI.Controls.DarkLabel();
@@ -60,6 +67,30 @@ namespace GML_del
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Column4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.darkLabel5 = new DarkUI.Controls.DarkLabel();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbTime2 = new DarkUI.Controls.DarkLabel();
+            this.darkLabel4 = new DarkUI.Controls.DarkLabel();
+            this.lbTime = new DarkUI.Controls.DarkLabel();
+            this.darkLabel3 = new DarkUI.Controls.DarkLabel();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.lbProgress = new DarkUI.Controls.DarkLabel();
+            this.btnClose = new DarkUI.Controls.DarkButton();
+            this.btnAbout = new DarkUI.Controls.DarkButton();
+            this.btnUruchom = new DarkUI.Controls.DarkButton();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.darkStatusStrip1 = new DarkUI.Controls.DarkStatusStrip();
+            this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,37 +100,7 @@ namespace GML_del
             this.KoniecObiektu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusOb = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Column4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.lbProgress = new DarkUI.Controls.DarkLabel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.btnUruchom = new DarkUI.Controls.DarkButton();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.darkStatusStrip1 = new DarkUI.Controls.DarkStatusStrip();
-            this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnAbout = new DarkUI.Controls.DarkButton();
-            this.btnClose = new DarkUI.Controls.DarkButton();
-            this.darkLabel3 = new DarkUI.Controls.DarkLabel();
-            this.lbTime = new DarkUI.Controls.DarkLabel();
-            this.darkLabel4 = new DarkUI.Controls.DarkLabel();
-            this.lbTime2 = new DarkUI.Controls.DarkLabel();
-            this.darkLabel5 = new DarkUI.Controls.DarkLabel();
-            this.chBoxKarto = new DarkUI.Controls.DarkCheckBox();
-            this.chBoxOneJob = new DarkUI.Controls.DarkCheckBox();
-            this.tbFileName = new DarkUI.Controls.DarkTextBox();
-            this.tbKonc = new DarkUI.Controls.DarkTextBox();
-            this.darkButton1 = new DarkUI.Controls.DarkButton();
-            this.cbOneJob = new DarkUI.Controls.DarkComboBox();
-            this.tbAngle = new DarkUI.Controls.DarkTextBox();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -154,6 +155,58 @@ namespace GML_del
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
+            // 
+            // tbAngle
+            // 
+            resources.ApplyResources(this.tbAngle, "tbAngle");
+            this.tbAngle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.tbAngle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbAngle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.tbAngle.Name = "tbAngle";
+            // 
+            // cbOneJob
+            // 
+            resources.ApplyResources(this.cbOneJob, "cbOneJob");
+            this.cbOneJob.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbOneJob.FormattingEnabled = true;
+            this.cbOneJob.Items.AddRange(new object[] {
+            resources.GetString("cbOneJob.Items")});
+            this.cbOneJob.Name = "cbOneJob";
+            // 
+            // darkButton1
+            // 
+            resources.ApplyResources(this.darkButton1, "darkButton1");
+            this.darkButton1.Name = "darkButton1";
+            this.darkButton1.Click += new System.EventHandler(this.Button1Click);
+            // 
+            // tbKonc
+            // 
+            this.tbKonc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.tbKonc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbKonc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            resources.ApplyResources(this.tbKonc, "tbKonc");
+            this.tbKonc.Name = "tbKonc";
+            // 
+            // tbFileName
+            // 
+            resources.ApplyResources(this.tbFileName, "tbFileName");
+            this.tbFileName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.tbFileName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbFileName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.tbFileName.Name = "tbFileName";
+            // 
+            // chBoxOneJob
+            // 
+            resources.ApplyResources(this.chBoxOneJob, "chBoxOneJob");
+            this.chBoxOneJob.Name = "chBoxOneJob";
+            this.chBoxOneJob.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // chBoxKarto
+            // 
+            resources.ApplyResources(this.chBoxKarto, "chBoxKarto");
+            this.chBoxKarto.Checked = true;
+            this.chBoxKarto.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chBoxKarto.Name = "chBoxKarto";
             // 
             // chBoxArch
             // 
@@ -244,11 +297,200 @@ namespace GML_del
             this.KoniecWersji,
             this.KoniecObiektu,
             this.StatusOb,
-            this.Column8});
+            this.Column8,
+            this.Column9});
             resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.splitContainer3);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer3
+            // 
+            resources.ApplyResources(this.splitContainer3, "splitContainer3");
+            this.splitContainer3.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer3.Name = "splitContainer3";
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.dataGridView2);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.splitContainer3.Panel2.Controls.Add(this.darkLabel5);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column4,
+            this.Column5,
+            this.Column6});
+            resources.ApplyResources(this.dataGridView2, "dataGridView2");
+            this.dataGridView2.Name = "dataGridView2";
+            // 
+            // Column4
+            // 
+            resources.ApplyResources(this.Column4, "Column4");
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            resources.ApplyResources(this.Column5, "Column5");
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            resources.ApplyResources(this.Column6, "Column6");
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // darkLabel5
+            // 
+            resources.ApplyResources(this.darkLabel5, "darkLabel5");
+            this.darkLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel5.Name = "darkLabel5";
+            // 
+            // splitContainer2
+            // 
+            resources.ApplyResources(this.splitContainer2, "splitContainer2");
+            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.splitContainer1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.splitContainer4);
+            // 
+            // splitContainer4
+            // 
+            resources.ApplyResources(this.splitContainer4, "splitContainer4");
+            this.splitContainer4.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer4.Name = "splitContainer4";
+            // 
+            // splitContainer4.Panel1
+            // 
+            this.splitContainer4.Panel1.Controls.Add(this.richTextBox1);
+            this.splitContainer4.Panel1.Controls.Add(this.panel1);
+            // 
+            // splitContainer4.Panel2
+            // 
+            this.splitContainer4.Panel2.Controls.Add(this.btnClose);
+            this.splitContainer4.Panel2.Controls.Add(this.btnAbout);
+            this.splitContainer4.Panel2.Controls.Add(this.btnUruchom);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(64)))), ((int)(((byte)(74)))));
+            resources.ApplyResources(this.richTextBox1, "richTextBox1");
+            this.richTextBox1.ForeColor = System.Drawing.Color.Lime;
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lbTime2);
+            this.panel1.Controls.Add(this.darkLabel4);
+            this.panel1.Controls.Add(this.lbTime);
+            this.panel1.Controls.Add(this.darkLabel3);
+            this.panel1.Controls.Add(this.progressBar1);
+            this.panel1.Controls.Add(this.lbProgress);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
+            // lbTime2
+            // 
+            resources.ApplyResources(this.lbTime2, "lbTime2");
+            this.lbTime2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbTime2.Name = "lbTime2";
+            // 
+            // darkLabel4
+            // 
+            resources.ApplyResources(this.darkLabel4, "darkLabel4");
+            this.darkLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel4.Name = "darkLabel4";
+            // 
+            // lbTime
+            // 
+            resources.ApplyResources(this.lbTime, "lbTime");
+            this.lbTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbTime.Name = "lbTime";
+            // 
+            // darkLabel3
+            // 
+            resources.ApplyResources(this.darkLabel3, "darkLabel3");
+            this.darkLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel3.Name = "darkLabel3";
+            // 
+            // progressBar1
+            // 
+            resources.ApplyResources(this.progressBar1, "progressBar1");
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            // 
+            // lbProgress
+            // 
+            resources.ApplyResources(this.lbProgress, "lbProgress");
+            this.lbProgress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbProgress.Name = "lbProgress";
+            // 
+            // btnClose
+            // 
+            resources.ApplyResources(this.btnClose, "btnClose");
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Click += new System.EventHandler(this.Button2Click);
+            // 
+            // btnAbout
+            // 
+            resources.ApplyResources(this.btnAbout, "btnAbout");
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Click += new System.EventHandler(this.Button3Click);
+            // 
+            // btnUruchom
+            // 
+            resources.ApplyResources(this.btnUruchom, "btnUruchom");
+            this.btnUruchom.Image = global::GML_del.Properties.Resources.Blue_Play;
+            this.btnUruchom.ImagePadding = 20;
+            this.btnUruchom.Name = "btnUruchom";
+            this.btnUruchom.Click += new System.EventHandler(this.btnUruchomClick);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.DefaultExt = "gml";
+            this.openFileDialog1.FileName = "openFileDialog1";
+            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // darkStatusStrip1
+            // 
+            resources.ApplyResources(this.darkStatusStrip1, "darkStatusStrip1");
+            this.darkStatusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.darkStatusStrip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkStatusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusLabel});
+            this.darkStatusStrip1.Name = "darkStatusStrip1";
+            this.darkStatusStrip1.SizingGrip = false;
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.Name = "statusLabel";
+            resources.ApplyResources(this.statusLabel, "statusLabel");
             // 
             // Column1
             // 
@@ -315,245 +557,11 @@ namespace GML_del
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.splitContainer3);
-            resources.ApplyResources(this.tabPage2, "tabPage2");
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer3
-            // 
-            resources.ApplyResources(this.splitContainer3, "splitContainer3");
-            this.splitContainer3.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainer3.Name = "splitContainer3";
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.Controls.Add(this.dataGridView2);
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.splitContainer3.Panel2.Controls.Add(this.darkLabel5);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column4,
-            this.Column5,
-            this.Column6});
-            resources.ApplyResources(this.dataGridView2, "dataGridView2");
-            this.dataGridView2.Name = "dataGridView2";
-            // 
-            // Column4
-            // 
-            resources.ApplyResources(this.Column4, "Column4");
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            resources.ApplyResources(this.Column5, "Column5");
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            resources.ApplyResources(this.Column6, "Column6");
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // splitContainer2
-            // 
-            resources.ApplyResources(this.splitContainer2, "splitContainer2");
-            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.splitContainer1);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.splitContainer4);
-            // 
-            // splitContainer4
-            // 
-            resources.ApplyResources(this.splitContainer4, "splitContainer4");
-            this.splitContainer4.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainer4.Name = "splitContainer4";
-            // 
-            // splitContainer4.Panel1
-            // 
-            this.splitContainer4.Panel1.Controls.Add(this.richTextBox1);
-            this.splitContainer4.Panel1.Controls.Add(this.panel1);
-            // 
-            // splitContainer4.Panel2
-            // 
-            this.splitContainer4.Panel2.Controls.Add(this.btnClose);
-            this.splitContainer4.Panel2.Controls.Add(this.btnAbout);
-            this.splitContainer4.Panel2.Controls.Add(this.btnUruchom);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lbTime2);
-            this.panel1.Controls.Add(this.darkLabel4);
-            this.panel1.Controls.Add(this.lbTime);
-            this.panel1.Controls.Add(this.darkLabel3);
-            this.panel1.Controls.Add(this.progressBar1);
-            this.panel1.Controls.Add(this.lbProgress);
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
-            // 
-            // progressBar1
-            // 
-            resources.ApplyResources(this.progressBar1, "progressBar1");
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            // 
-            // lbProgress
-            // 
-            resources.ApplyResources(this.lbProgress, "lbProgress");
-            this.lbProgress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbProgress.Name = "lbProgress";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(64)))), ((int)(((byte)(74)))));
-            resources.ApplyResources(this.richTextBox1, "richTextBox1");
-            this.richTextBox1.ForeColor = System.Drawing.Color.Lime;
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            // 
-            // btnUruchom
-            // 
-            resources.ApplyResources(this.btnUruchom, "btnUruchom");
-            this.btnUruchom.Image = global::GML_del.Properties.Resources.Blue_Play;
-            this.btnUruchom.ImagePadding = 20;
-            this.btnUruchom.Name = "btnUruchom";
-            this.btnUruchom.Click += new System.EventHandler(this.btnUruchomClick);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.DefaultExt = "gml";
-            this.openFileDialog1.FileName = "openFileDialog1";
-            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // darkStatusStrip1
-            // 
-            resources.ApplyResources(this.darkStatusStrip1, "darkStatusStrip1");
-            this.darkStatusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.darkStatusStrip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkStatusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statusLabel});
-            this.darkStatusStrip1.Name = "darkStatusStrip1";
-            this.darkStatusStrip1.SizingGrip = false;
-            // 
-            // statusLabel
-            // 
-            this.statusLabel.Name = "statusLabel";
-            resources.ApplyResources(this.statusLabel, "statusLabel");
-            // 
-            // btnAbout
-            // 
-            resources.ApplyResources(this.btnAbout, "btnAbout");
-            this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Click += new System.EventHandler(this.Button3Click);
-            // 
-            // btnClose
-            // 
-            resources.ApplyResources(this.btnClose, "btnClose");
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Click += new System.EventHandler(this.Button2Click);
-            // 
-            // darkLabel3
-            // 
-            resources.ApplyResources(this.darkLabel3, "darkLabel3");
-            this.darkLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel3.Name = "darkLabel3";
-            // 
-            // lbTime
-            // 
-            resources.ApplyResources(this.lbTime, "lbTime");
-            this.lbTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbTime.Name = "lbTime";
-            // 
-            // darkLabel4
-            // 
-            resources.ApplyResources(this.darkLabel4, "darkLabel4");
-            this.darkLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel4.Name = "darkLabel4";
-            // 
-            // lbTime2
-            // 
-            resources.ApplyResources(this.lbTime2, "lbTime2");
-            this.lbTime2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbTime2.Name = "lbTime2";
-            // 
-            // darkLabel5
-            // 
-            resources.ApplyResources(this.darkLabel5, "darkLabel5");
-            this.darkLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel5.Name = "darkLabel5";
-            // 
-            // chBoxKarto
-            // 
-            resources.ApplyResources(this.chBoxKarto, "chBoxKarto");
-            this.chBoxKarto.Checked = true;
-            this.chBoxKarto.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chBoxKarto.Name = "chBoxKarto";
-            // 
-            // chBoxOneJob
-            // 
-            resources.ApplyResources(this.chBoxOneJob, "chBoxOneJob");
-            this.chBoxOneJob.Name = "chBoxOneJob";
-            this.chBoxOneJob.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
-            // tbFileName
-            // 
-            resources.ApplyResources(this.tbFileName, "tbFileName");
-            this.tbFileName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.tbFileName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbFileName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.tbFileName.Name = "tbFileName";
-            // 
-            // tbKonc
-            // 
-            this.tbKonc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.tbKonc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbKonc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            resources.ApplyResources(this.tbKonc, "tbKonc");
-            this.tbKonc.Name = "tbKonc";
-            // 
-            // darkButton1
-            // 
-            resources.ApplyResources(this.darkButton1, "darkButton1");
-            this.darkButton1.Name = "darkButton1";
-            this.darkButton1.Click += new System.EventHandler(this.Button1Click);
-            // 
-            // cbOneJob
-            // 
-            resources.ApplyResources(this.cbOneJob, "cbOneJob");
-            this.cbOneJob.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbOneJob.FormattingEnabled = true;
-            this.cbOneJob.Items.AddRange(new object[] {
-            resources.GetString("cbOneJob.Items")});
-            this.cbOneJob.Name = "cbOneJob";
-            // 
-            // tbAngle
-            // 
-            resources.ApplyResources(this.tbAngle, "tbAngle");
-            this.tbAngle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.tbAngle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbAngle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.tbAngle.Name = "tbAngle";
+            // Column9
+            // 
+            resources.ApplyResources(this.Column9, "Column9");
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
             // 
             // MainForm
             // 
@@ -597,15 +605,6 @@ namespace GML_del
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.SplitContainer splitContainer3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StartWersji;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KoniecWersji;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KoniecObiektu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StatusOb;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.CheckBox chBoxSilentMode;
@@ -637,5 +636,15 @@ namespace GML_del
         private DarkUI.Controls.DarkButton darkButton1;
         private DarkUI.Controls.DarkTextBox tbKonc;
         private DarkUI.Controls.DarkTextBox tbAngle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartWersji;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KoniecWersji;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KoniecObiektu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StatusOb;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }
