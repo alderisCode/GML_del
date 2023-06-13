@@ -140,7 +140,36 @@ namespace GML_del
     					}
     				}
 
-    				if (S.Contains("<bt:lokalnyId>"))								// LokalnyId
+					if (S.Contains(":zrodlo"))
+					{
+						var V = GetXMLValue(S);
+						switch (V)
+						{
+							case ("pomiarNaOsnowe"):
+								oi.Source = 'O';
+								break;
+							case ("digitalizacjaIWektoryzacja"):
+								oi.Source = 'D';
+								break;
+							case ("fotogrametria"):
+								oi.Source = 'F';
+								break;
+							case ("pomiarWOparciuOElementyMapy"):
+								oi.Source = 'M';
+								break;
+							case ("inne"):
+								oi.Source = 'I';
+								break;
+							case ("nieokreslone"):
+								oi.Source = 'X';
+								break;
+							default:
+								break;
+						}
+					}
+
+
+					if (S.Contains(":lokalnyId>"))									// LokalnyId
     				{
     					if (oi.ObKarto) 
     						{
@@ -154,10 +183,15 @@ namespace GML_del
 						}
     				}
 
-					if (S.Contains("<bt:katObrotu>"))								// Kąt obrotu
+					if (S.Contains(":katObrotu>"))								// Kąt obrotu
                     {
 						oi.Angle = GetXMLValue(S);
                     }
+
+					if (S.Contains(":dataPomiaru>"))
+					{
+						oi.DataPomiaru = Convert.ToDateTime(GetXMLValue(S));
+					}
 
 					if (S.Contains("xlink:href"))									// Referencja
 					{
@@ -228,8 +262,16 @@ namespace GML_del
 
 		string GetXMLValue(string txt) 
 		{
-			int i = txt.IndexOf('>');			
-			return txt.Substring(i+1, txt.Length-(2*i+3));
+			try
+            {
+				int i = txt.IndexOf('>');
+				return txt.Substring(i + 1, txt.Length - (2 * i + 3));
+			}
+			catch (Exception e)
+            {
+				MessageBox.Show("Linia: " + LinesCount.ToString() + '\n' + txt, "Błąd wartości XML");
+            }
+			return "";
 		}
 
 
