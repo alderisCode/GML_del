@@ -67,6 +67,16 @@ namespace GML_del
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartWersji = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KoniecWersji = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KoniecObiektu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusOb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -91,16 +101,6 @@ namespace GML_del
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.darkStatusStrip1 = new DarkUI.Controls.DarkStatusStrip();
             this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartWersji = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KoniecWersji = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KoniecObiektu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StatusOb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -170,7 +170,8 @@ namespace GML_del
             this.cbOneJob.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.cbOneJob.FormattingEnabled = true;
             this.cbOneJob.Items.AddRange(new object[] {
-            resources.GetString("cbOneJob.Items")});
+            resources.GetString("cbOneJob.Items"),
+            resources.GetString("cbOneJob.Items1")});
             this.cbOneJob.Name = "cbOneJob";
             // 
             // darkButton1
@@ -268,6 +269,7 @@ namespace GML_del
             this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.ControlDark;
             resources.ApplyResources(this.dateTimePicker1, "dateTimePicker1");
             this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // tabControl1
             // 
@@ -303,6 +305,77 @@ namespace GML_del
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.Column1, "Column1");
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.Column2, "Column2");
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.Column3, "Column3");
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.Column7, "Column7");
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // StartWersji
+            // 
+            this.StartWersji.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.StartWersji, "StartWersji");
+            this.StartWersji.Name = "StartWersji";
+            this.StartWersji.ReadOnly = true;
+            // 
+            // KoniecWersji
+            // 
+            this.KoniecWersji.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.KoniecWersji, "KoniecWersji");
+            this.KoniecWersji.Name = "KoniecWersji";
+            this.KoniecWersji.ReadOnly = true;
+            // 
+            // KoniecObiektu
+            // 
+            this.KoniecObiektu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.KoniecObiektu, "KoniecObiektu");
+            this.KoniecObiektu.Name = "KoniecObiektu";
+            this.KoniecObiektu.ReadOnly = true;
+            // 
+            // StatusOb
+            // 
+            this.StatusOb.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.StatusOb, "StatusOb");
+            this.StatusOb.Name = "StatusOb";
+            this.StatusOb.ReadOnly = true;
+            this.StatusOb.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.StatusOb.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column8
+            // 
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.Column8, "Column8");
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            resources.ApplyResources(this.Column9, "Column9");
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
             // 
             // tabPage2
             // 
@@ -491,77 +564,6 @@ namespace GML_del
             // 
             this.statusLabel.Name = "statusLabel";
             resources.ApplyResources(this.statusLabel, "statusLabel");
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.Column1, "Column1");
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.Column2, "Column2");
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.Column3, "Column3");
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.Column7, "Column7");
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // StartWersji
-            // 
-            this.StartWersji.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.StartWersji, "StartWersji");
-            this.StartWersji.Name = "StartWersji";
-            this.StartWersji.ReadOnly = true;
-            // 
-            // KoniecWersji
-            // 
-            this.KoniecWersji.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.KoniecWersji, "KoniecWersji");
-            this.KoniecWersji.Name = "KoniecWersji";
-            this.KoniecWersji.ReadOnly = true;
-            // 
-            // KoniecObiektu
-            // 
-            this.KoniecObiektu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.KoniecObiektu, "KoniecObiektu");
-            this.KoniecObiektu.Name = "KoniecObiektu";
-            this.KoniecObiektu.ReadOnly = true;
-            // 
-            // StatusOb
-            // 
-            this.StatusOb.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.StatusOb, "StatusOb");
-            this.StatusOb.Name = "StatusOb";
-            this.StatusOb.ReadOnly = true;
-            this.StatusOb.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.StatusOb.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column8
-            // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            resources.ApplyResources(this.Column8, "Column8");
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            resources.ApplyResources(this.Column9, "Column9");
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
             // 
             // MainForm
             // 

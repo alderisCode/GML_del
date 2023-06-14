@@ -269,9 +269,30 @@ namespace GML_del
 			}
 			catch (Exception e)
             {
-				MessageBox.Show("Linia: " + LinesCount.ToString() + '\n' + txt, "Błąd wartości XML");
+                DarkMessageBox.ShowWarning(e.Message + "\n\nLinia nr: " + LinesCount.ToString() + "\n\n" + txt, 
+					"Błąd wartości XML", DarkDialogButton.Ok);
+
             }
-			return "";
+            return "";
+		}
+
+		string SetXMLValue(string lineTxt, string Value)
+		{
+			try
+			{				
+				int pos1 = lineTxt.IndexOf('>');						// sprawdzić czy działa !!!
+				var txt1 = lineTxt.Substring(0, pos1);
+				var txt2 = lineTxt.Substring(pos1 + 1, lineTxt.Length);
+				int pos2 = txt2.IndexOf('<');
+				txt2 = txt2.Substring(pos2 + 1, txt2.Length);
+				txt2 = String.Concat(txt1, Value, txt2);
+				return txt2;  //wartość zmieniona
+			}
+			catch (Exception e)
+			{
+				DarkMessageBox.ShowWarning(e.Message, "Błąd podmiany wartości XML", DarkDialogButton.Ok);
+			}
+			return lineTxt;  //wartość niezmieniona
 		}
 
 
@@ -445,6 +466,15 @@ namespace GML_del
 								ob2Del++;
 							}
 							break;
+						case 1:
+							// jeśli to obiekt archiwalny lub wersja obiektu sprzed daty pomiaru to usuwamy
+							if (o.Archived || o.StartWersjiOb < dateTimePicker1.Value) 
+                            {
+								o.ToRemove = true;
+								blocks.Add(new LinesBlock(o.LineStart, o.LineEnd));
+								ob2Del++;
+							}
+							break;
 						default:
 							break;
                     }
@@ -509,7 +539,7 @@ namespace GML_del
 							ob2Del++;
 						}
 					}
-					// jeśli obracamy kąt, a nie jest to obiekt usuwany lucb archiwalny
+					// jeśli obracamy kąt, a nie jest to obiekt usuwany lub archiwalny
 					if ((chBoxRotateNew.Checked) && (!o.Deleted) && (!o.Archived) && (o.Angle != "brak"))
 					{
 						// jeśli obiekt jest nowy
@@ -735,5 +765,10 @@ namespace GML_del
 			while (a > 400) { a = a - 400; }
 			return a.ToString();
 		}
-	}
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+			dateTimePicker1.Value = dateTimePicker1.Value.Date;
+        }
+    }
 }
