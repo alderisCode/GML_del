@@ -62,7 +62,6 @@ namespace GML_del
             this.chBoxSilentMode = new System.Windows.Forms.CheckBox();
             this.button5 = new System.Windows.Forms.Button();
             this.chBoxRotateNew = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -101,6 +100,7 @@ namespace GML_del
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.darkStatusStrip1 = new DarkUI.Controls.DarkStatusStrip();
             this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.darkLabel6 = new DarkUI.Controls.DarkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -134,6 +134,7 @@ namespace GML_del
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.darkLabel6);
             this.splitContainer1.Panel1.Controls.Add(this.tbAngle);
             this.splitContainer1.Panel1.Controls.Add(this.cbOneJob);
             this.splitContainer1.Panel1.Controls.Add(this.darkButton1);
@@ -149,7 +150,6 @@ namespace GML_del
             this.splitContainer1.Panel1.Controls.Add(this.chBoxSilentMode);
             this.splitContainer1.Panel1.Controls.Add(this.button5);
             this.splitContainer1.Panel1.Controls.Add(this.chBoxRotateNew);
-            this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.dateTimePicker1);
             // 
             // splitContainer1.Panel2
@@ -258,11 +258,6 @@ namespace GML_del
             resources.ApplyResources(this.chBoxRotateNew, "chBoxRotateNew");
             this.chBoxRotateNew.Name = "chBoxRotateNew";
             this.chBoxRotateNew.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
             // 
             // dateTimePicker1
             // 
@@ -565,6 +560,12 @@ namespace GML_del
             this.statusLabel.Name = "statusLabel";
             resources.ApplyResources(this.statusLabel, "statusLabel");
             // 
+            // darkLabel6
+            // 
+            resources.ApplyResources(this.darkLabel6, "darkLabel6");
+            this.darkLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel6.Name = "darkLabel6";
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -607,7 +608,6 @@ namespace GML_del
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.SplitContainer splitContainer3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.CheckBox chBoxSilentMode;
         private System.Windows.Forms.Button button5;
@@ -648,5 +648,6 @@ namespace GML_del
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusOb;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private DarkUI.Controls.DarkLabel darkLabel6;
     }
 }

@@ -128,10 +128,37 @@
   <data name="splitContainer1.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="darkLabel6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="darkLabel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 141</value>
+  </data>
+  <data name="darkLabel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 13</value>
+  </data>
+  <data name="darkLabel6.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="darkLabel6.Text" xml:space="preserve">
+    <value>Data pomiaru</value>
+  </data>
+  <data name="&gt;&gt;darkLabel6.Name" xml:space="preserve">
+    <value>darkLabel6</value>
+  </data>
+  <data name="&gt;&gt;darkLabel6.Type" xml:space="preserve">
+    <value>DarkUI.Controls.DarkLabel, DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;darkLabel6.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;darkLabel6.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="tbAngle.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tbAngle.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -160,7 +187,7 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;tbAngle.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cbOneJob.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -193,7 +220,7 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;cbOneJob.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="darkButton1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -223,7 +250,7 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;darkButton1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="tbKonc.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 96</value>
@@ -247,7 +274,7 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;tbKonc.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="tbFileName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -271,7 +298,7 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;tbFileName.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="chBoxOneJob.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -301,7 +328,7 @@
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;chBoxOneJob.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="chBoxKarto.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -333,7 +360,7 @@ do nieistniejących obiektów
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;chBoxKarto.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="chBoxArch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -363,7 +390,7 @@ do nieistniejących obiektów
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;chBoxArch.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="darkLabel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -390,7 +417,7 @@ do nieistniejących obiektów
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;darkLabel1.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lbInfo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 7pt, style=Italic</value>
@@ -417,7 +444,7 @@ do nieistniejących obiektów
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;lbInfo.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="darkLabel2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -444,7 +471,7 @@ do nieistniejących obiektów
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;darkLabel2.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="chBoxRotateMod.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -477,7 +504,7 @@ do nieistniejących obiektów
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;chBoxRotateMod.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="chBoxSilentMode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -507,7 +534,7 @@ do nieistniejących obiektów
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;chBoxSilentMode.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="button5.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 6.75pt</value>
@@ -534,7 +561,7 @@ do nieistniejących obiektów
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;button5.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="chBoxRotateNew.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -567,33 +594,6 @@ do nieistniejących obiektów
     <value>splitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;chBoxRotateNew.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 143</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 13</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Data pomiaru</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
   <data name="dateTimePicker1.Location" type="System.Drawing.Point, System.Drawing">
@@ -1646,7 +1646,7 @@ do nieistniejących obiektów
 </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>GML-Del</value>
+    <value> </value>
   </data>
   <data name="&gt;&gt;Column1.Name" xml:space="preserve">
     <value>Column1</value>

@@ -1,12 +1,4 @@
-﻿/*
- * Created by SharpDevelop.
- * User: user
- * Date: 05.03.2019
- * Time: 11:48
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
- */
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
@@ -186,7 +178,8 @@ namespace GML_del
 					if (S.Contains(":katObrotu>"))								// Kąt obrotu
                     {
 						oi.Angle = GetXMLValue(S);
-                    }
+						oi.AngleLine = LinesCount;
+					}
 
 					if (S.Contains(":dataPomiaru>"))
 					{
@@ -450,7 +443,7 @@ namespace GML_del
 			int obKarto2Del = 0;
 			int ob2Del = 0;
 			int ang2Rotate = 0;
-			foreach (ObjectInfo o in Objects) 
+			foreach (ObjectInfo o in Objects)												// ZAPIS - przejście 1
 			{
 				obc++;
 				PBValue(obc, ObCount);
@@ -517,7 +510,7 @@ namespace GML_del
 			obc = 0;
 			obKarto2Del = 0;
 			int obRotate = 0;
-			foreach (ObjectInfo o in Objects)
+			foreach (ObjectInfo o in Objects)                                                   // ZAPIS - przejście 2
 			{
 				obc++;
 				if ((obc / 100) - Math.Truncate((double)(obc / 100)) == 0)
@@ -587,7 +580,7 @@ namespace GML_del
 			int linesBlockIdx = 0; 
 			bool lnOk;
 
-			using (var writer = new StreamWriter(path))
+			using (var writer = new StreamWriter(path))                                         // ZAPIS - właściwy
 			{
 				long lnCount = 0;
 				foreach (var line in File.ReadLines(tbFileName.Text))

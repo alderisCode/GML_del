@@ -33,6 +33,7 @@ namespace GML_del
 		public bool ToRemove = false;
 		public string Angle = "-";					// wartość dla braku kąta obrotu w obiekcie
 		public bool RotateAngle = false;
+		public int AngleLine;
 		public DateTime DataPomiaru;
 		public char Source;
 		
