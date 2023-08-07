@@ -213,7 +213,19 @@ namespace GML_del
 						oi.Deleted = true;
 						oi.Archived = false;
     				}    					
-    			}
+					if (S.Contains(":rzedna"))
+                    {
+						oi.H1 = Convert.ToSingle(GetXMLValue(S));
+                    }
+					if (S.Contains(":rzednaGory"))
+					{
+						oi.H1 = Convert.ToSingle(GetXMLValue(S));
+					}
+					if (S.Contains(":rzednaDolu"))
+					{
+						oi.H2 = Convert.ToSingle(GetXMLValue(S));
+					}
+				}
 			}	
 			Log("Ok.\nZnaleziono " + ObCount.ToString() + " ob.");
 			Log("\n   w tym " + ObKartoCount.ToString() + " ob. karto");

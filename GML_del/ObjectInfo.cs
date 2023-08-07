@@ -36,6 +36,8 @@ namespace GML_del
 		public int AngleLine;
 		public DateTime DataPomiaru;
 		public char Source;
+		public Single H1 = -999.0f;
+		public Single H2 = -999.0f;
 		
 		public ObjectInfo()
 		{
