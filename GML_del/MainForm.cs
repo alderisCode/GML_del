@@ -261,7 +261,7 @@ namespace GML_del
 			}
 
 			// Szukanie obiektów archiwalnych
-			FindArchObj();
+			ValidateGML();
 		}
 	
 
@@ -338,8 +338,8 @@ namespace GML_del
 			//Log("\n" + V.ToString());
         }
 
-		void FindArchObj() 
-		{
+		void ValidateGML()																	// ==========================
+		{																					//   WALIDACJA DANYCH w GML
 			Log("\nSprawdzam status obiektów... ");
 			progressBar1.Maximum = Objects.Count;
 			progressBar1.Value = 0;
@@ -353,6 +353,9 @@ namespace GML_del
 			DataGridViewCellStyle style2 = new DataGridViewCellStyle(this.dataGridView1.RowsDefaultCellStyle);
 			style2.ForeColor = Color.SaddleBrown;
 			style2.BackColor = Color.LightGray;
+			DataGridViewCellStyle style3 = new DataGridViewCellStyle(this.dataGridView1.RowsDefaultCellStyle);
+			style3.ForeColor = Color.Black;
+			style3.BackColor = Color.LightCoral;
 			for (int i = 0; i < Objects.Count - 1; i++)
 			{
 				if (!chBoxSilentMode.Checked)
@@ -380,6 +383,16 @@ namespace GML_del
 						dataGridView1.Rows[i].Cells["StatusOb"].Value = "Archiwalny";
 					}
 				}
+
+				// kontrola rzędnych
+				if (Objects[i].H1 != -999.0f)
+                {
+					if (Objects[i].H1 < -100 || Objects[i].H1 > 1000)
+                    {
+						dataGridView1.Rows[i].Cells["Uwagi"].Style = style3;
+						dataGridView1.Rows[i].
+					}
+                }
 			}
 			
 			dataGridView1.ResumeLayout();
