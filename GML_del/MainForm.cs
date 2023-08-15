@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 using DarkUI.Forms;
+using System.Globalization;
 
 namespace GML_del
 {
@@ -215,15 +216,15 @@ namespace GML_del
     				}    					
 					if (S.Contains(":rzedna"))
                     {
-						oi.H1 = Convert.ToSingle(GetXMLValue(S));
+						oi.H1 = Convert.ToSingle(Sep(GetXMLValue(S)));
                     }
 					if (S.Contains(":rzednaGory"))
 					{
-						oi.H1 = Convert.ToSingle(GetXMLValue(S));
+						oi.H1 = Convert.ToSingle(Sep(GetXMLValue(S)));
 					}
 					if (S.Contains(":rzednaDolu"))
 					{
-						oi.H2 = Convert.ToSingle(GetXMLValue(S));
+						oi.H2 = Convert.ToSingle(Sep(GetXMLValue(S)));
 					}
 				}
 			}	
@@ -355,11 +356,14 @@ namespace GML_del
 			style2.BackColor = Color.LightGray;
 			DataGridViewCellStyle style3 = new DataGridViewCellStyle(this.dataGridView1.RowsDefaultCellStyle);
 			style3.ForeColor = Color.Black;
-			style3.BackColor = Color.LightCoral;
+			style3.BackColor = Color.Coral;
+			string txtErrors = "";
+			int errCount = 0;
 			for (int i = 0; i < Objects.Count - 1; i++)
 			{
 				if (!chBoxSilentMode.Checked)
 				PBValue(i, progressBar1.Maximum);
+				txtErrors = "";
 
 				// jeśli koniec obiektu
 				if (Objects[i].Deleted)
@@ -388,11 +392,25 @@ namespace GML_del
 				if (Objects[i].H1 != -999.0f)
                 {
 					if (Objects[i].H1 < -100 || Objects[i].H1 > 1000)
-                    {
+					{
+						dataGridView1.Rows[i].Cells[0].Style = style3;
+						dataGridView1.Rows[i].Cells[1].Style = style3;
+						dataGridView1.Rows[i].Cells[2].Style = style3;
 						dataGridView1.Rows[i].Cells["Uwagi"].Style = style3;
-						dataGridView1.Rows[i].
+						if (txtErrors.Length > 0) 
+							{ txtErrors = String.Concat(txtErrors, "\nBłąd wysokości"); }
+						else
+							{ txtErrors = String.Concat(txtErrors, "Błąd wysokości"); }
 					}
                 }
+
+				// Wpisanie UWAG jeśli są
+				if (txtErrors.Length > 0) 
+				{
+					errCount++;
+					dataGridView1.Rows[i].Cells["Uwagi"].Value = txtErrors;
+					dataGridView1.Rows[i].Cells["Uwagi"].ToolTipText = txtErrors;
+				}
 			}
 			
 			dataGridView1.ResumeLayout();
@@ -416,6 +434,10 @@ namespace GML_del
 				Log("\nZnaleziono ", Color.LightCoral);
 				Log(delCount.ToString(), Color.LightCoral);
 				Log(" ob. usun.", Color.LightCoral);
+			}
+			if (errCount>0)
+            {
+				Log("\nLiczba obiektów z błędami: " + errCount.ToString(), Color.Coral);
 			}
 			EndJob();
 			btnUruchom.Enabled = true;
@@ -788,5 +810,20 @@ namespace GML_del
         {
 			dateTimePicker1.Value = dateTimePicker1.Value.Date;
         }
-    }
+
+
+		private string Sep(string num)
+		{
+			string sep = CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator;
+			if (sep == ".")
+			{
+				return num.Replace(',', '.');
+			}
+			else
+			{
+				return num.Replace('.', ',');
+			}
+		}
+
+	}
 }

@@ -732,7 +732,7 @@ do nieistniejących obiektów
     <value>Uwagi</value>
   </data>
   <data name="Uwagi.Width" type="System.Int32, mscorlib">
-    <value>150</value>
+    <value>300</value>
   </data>
   <data name="dataGridView1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1757,7 +1757,7 @@ do nieistniejących obiektów
     <value>Uwagi</value>
   </data>
   <data name="&gt;&gt;Uwagi.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewComboBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

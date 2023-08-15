@@ -101,7 +101,7 @@ namespace GML_del
             this.StatusOb = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Uwagi = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Uwagi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -573,6 +573,8 @@ namespace GML_del
             resources.ApplyResources(this.Uwagi, "Uwagi");
             this.Uwagi.Name = "Uwagi";
             this.Uwagi.ReadOnly = true;
+            this.Uwagi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Uwagi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // MainForm
             // 
@@ -657,6 +659,6 @@ namespace GML_del
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusOb;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Uwagi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Uwagi;
     }
 }
