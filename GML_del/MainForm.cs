@@ -214,7 +214,7 @@ namespace GML_del
 						oi.Deleted = true;
 						oi.Archived = false;
     				}    					
-					if (S.Contains(":rzedna"))
+					if (S.Contains(":rzedna>"))
                     {
 						oi.H1 = Convert.ToSingle(Sep(GetXMLValue(S)));
                     }
