@@ -21,6 +21,8 @@ namespace GML_del
 		HashSet<string> LokalneId;			// wszystkie lokalneId
 		DateTime startTime;
 		float RotAngle = 0;
+
+		DataGridViewCellStyle style1, style2, style3;
 		
 		public MainForm()
 		{
@@ -216,16 +218,29 @@ namespace GML_del
     				}    					
 					if (S.Contains(":rzedna>"))
                     {
-						oi.H1 = Convert.ToSingle(Sep(GetXMLValue(S)));
+						XmlValue.GetValue(S);
+						if (!XmlValue.template && !XmlValue.error)
+						  oi.H1 = Convert.ToSingle(Sep(XmlValue.value));
                     }
 					if (S.Contains(":rzednaGory"))
 					{
-						oi.H1 = Convert.ToSingle(Sep(GetXMLValue(S)));
+						XmlValue.GetValue(S);
+						if (!XmlValue.template && !XmlValue.error)
+							oi.H1 = Convert.ToSingle(Sep(XmlValue.value));
 					}
 					if (S.Contains(":rzednaDolu"))
 					{
-						oi.H2 = Convert.ToSingle(Sep(GetXMLValue(S)));
+						XmlValue.GetValue(S);
+						if (!XmlValue.template && !XmlValue.error)
+							oi.H2 = Convert.ToSingle(Sep(XmlValue.value));
 					}
+					if (S.Contains(":srednica"))
+					{
+						XmlValue.GetValue(S);
+						if (!XmlValue.template && !XmlValue.error)
+							oi.D = Convert.ToSingle(Sep(XmlValue.value));
+					}
+
 				}
 			}	
 			Log("Ok.\nZnaleziono " + ObCount.ToString() + " ob.");
@@ -254,20 +269,29 @@ namespace GML_del
 			statusLabel.Text = String.Concat("Znaleziono ", LinesCount.ToString(), " linii, ", ObCount.ToString(), " obiektów. Gotowe.");
 			Log("Gotowe.\n");
 
-			// Typy obiektów
+			// Typy obiektów (druga zakładka)
 			foreach (ObjectType ot in ObjTypes)
 			{
 				string S = String.Concat("false;", ot.Type, ";", ot.Count.ToString());
 				dataGridView2.Rows.Add(S.Split(';'));
 			}
 
-			// Szukanie obiektów archiwalnych
+			// Szukanie obiektów archiwalnych i walidacja GMLa
 			ValidateGML();
 		}
 	
 
 		string GetXMLValue(string txt) 
 		{
+			
+			txt = txt.Trim();
+			if (txt.Substring(txt.Length-2, 2) == "/>")						// wartość specjalna
+			{ 
+				if (txt.Contains("xsi:nil"))
+                {
+
+                }
+			}
 			try
             {
 				int i = txt.IndexOf('>');
@@ -348,13 +372,13 @@ namespace GML_del
 			int archCount = 0;
 			int delCount = 0;
 			dataGridView1.SuspendLayout();              // <---
-			DataGridViewCellStyle style1 = new DataGridViewCellStyle(this.dataGridView1.RowsDefaultCellStyle);
+			style1 = new DataGridViewCellStyle(this.dataGridView1.RowsDefaultCellStyle);
 			style1.ForeColor = Color.DarkRed;
 			style1.BackColor = Color.LightCoral;
-			DataGridViewCellStyle style2 = new DataGridViewCellStyle(this.dataGridView1.RowsDefaultCellStyle);
+			style2 = new DataGridViewCellStyle(this.dataGridView1.RowsDefaultCellStyle);
 			style2.ForeColor = Color.SaddleBrown;
 			style2.BackColor = Color.LightGray;
-			DataGridViewCellStyle style3 = new DataGridViewCellStyle(this.dataGridView1.RowsDefaultCellStyle);
+			style3 = new DataGridViewCellStyle(this.dataGridView1.RowsDefaultCellStyle);
 			style3.ForeColor = Color.Black;
 			style3.BackColor = Color.Coral;
 			string txtErrors = "";
@@ -393,16 +417,27 @@ namespace GML_del
                 {
 					if (Objects[i].H1 < -100 || Objects[i].H1 > 1000)
 					{
-						dataGridView1.Rows[i].Cells[0].Style = style3;
-						dataGridView1.Rows[i].Cells[1].Style = style3;
-						dataGridView1.Rows[i].Cells[2].Style = style3;
-						dataGridView1.Rows[i].Cells["Uwagi"].Style = style3;
-						if (txtErrors.Length > 0) 
-							{ txtErrors = String.Concat(txtErrors, "\nBłąd wysokości"); }
-						else
-							{ txtErrors = String.Concat(txtErrors, "Błąd wysokości"); }
+						txtErrors = setError(i, txtErrors, "Błąd wysokości (" + Objects[i].H1.ToString() + ")");
 					}
                 }
+
+				if (Objects[i].H2 != -999.0f)
+				{
+					if (Objects[i].H2 < -100 || Objects[i].H2 > 1000)
+					{
+						txtErrors = setError(i, txtErrors, "Błąd wysokości (" + Objects[i].H2.ToString() + ")");
+					}
+				}
+
+				//kontrola średnicy
+				if (Objects[i].D != -999.0f)
+				{
+					if (Objects[i].D <= 0)
+					{
+						txtErrors = setError(i, txtErrors, "Błędna średnica ("+ Objects[i].D.ToString()+")");
+					}
+				}
+
 
 				// Wpisanie UWAG jeśli są
 				if (txtErrors.Length > 0) 
@@ -823,6 +858,69 @@ namespace GML_del
 			{
 				return num.Replace('.', ',');
 			}
+		}
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+			dataGridView1.FirstDisplayedScrollingRowIndex = 0;
+        }
+
+
+		private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+			int selIndex = dataGridView1.CurrentCell.RowIndex;
+			for (int i=selIndex+1; i<dataGridView1.Rows.Count; i++)
+            {
+				if (!(dataGridView1.Rows[i].Cells["Uwagi"].Value is null))
+                {
+					if (dataGridView1.Rows[i].Cells["Uwagi"].Value.ToString().Length > 0)
+                    {
+						//Log("\n" + dataGridView1.Rows[i].Cells["Uwagi"].Value.ToString());
+						//dataGridView1.Rows[i].Selected = true;
+						dataGridView1.FirstDisplayedScrollingRowIndex = i;
+						Application.DoEvents();
+						break;
+					}
+				}
+            }
+			statusLabel.Text = "Nie znaleziono więcej linii z błedami.";
+			Application.DoEvents();
+		}
+
+		private void toolStripButton3_Click(object sender, EventArgs e)
+		{
+			int selIndex = dataGridView1.CurrentCell.RowIndex;
+			for (int i = selIndex-1; i > 0; i--)
+			{
+				if (!(dataGridView1.Rows[i].Cells["Uwagi"].Value is null))
+				{
+					if (dataGridView1.Rows[i].Cells["Uwagi"].Value.ToString().Length > 0)
+					{
+						//Log("\n" + dataGridView1.Rows[i].Cells["Uwagi"].Value.ToString());
+						//dataGridView1.Rows[i].Selected = true;
+						dataGridView1.FirstDisplayedScrollingRowIndex = i;
+						Application.DoEvents();
+						break;
+					}
+				}
+			}
+			statusLabel.Text = "Nie znaleziono więcej linii z błedami.";
+			Application.DoEvents();
+		}
+
+
+
+		private string setError(int rowIdx, string oldErrors, string newError)
+        {
+			dataGridView1.Rows[rowIdx].Cells[0].Style = style3;
+			dataGridView1.Rows[rowIdx].Cells[1].Style = style3;
+			dataGridView1.Rows[rowIdx].Cells[2].Style = style3;
+			dataGridView1.Rows[rowIdx].Cells["Uwagi"].Style = style3;
+			if (oldErrors.Length > 0)
+				{ oldErrors = String.Concat(oldErrors, "\n", newError); }
+			else
+				{ oldErrors = String.Concat(oldErrors, newError); }
+			return oldErrors;
 		}
 
 	}

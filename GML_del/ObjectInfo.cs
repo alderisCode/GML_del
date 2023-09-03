@@ -38,6 +38,8 @@ namespace GML_del
 		public char Source;
 		public Single H1 = -999.0f;
 		public Single H2 = -999.0f;
+		public Single D = -999.0f;
+		public bool Errors = false;
 		
 		public ObjectInfo()
 		{
