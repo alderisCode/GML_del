@@ -860,14 +860,27 @@ namespace GML_del
 			}
 		}
 
+		/// <summary>
+		/// Skok na początek tabeli
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-			dataGridView1.FirstDisplayedScrollingRowIndex = 0;
+			if (dataGridView1.RowCount > 1)
+			{
+				dataGridView1.FirstDisplayedScrollingRowIndex = 0;
+			}
         }
 
-
+		/// <summary>
+		/// Następny błąd
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void toolStripButton2_Click(object sender, EventArgs e)
         {
+			if (dataGridView1.RowCount < 2) { return; }
 			int selIndex = dataGridView1.CurrentCell.RowIndex;
 			for (int i=selIndex+1; i<dataGridView1.Rows.Count; i++)
             {
@@ -887,8 +900,14 @@ namespace GML_del
 			Application.DoEvents();
 		}
 
+		/// <summary>
+		/// Poprzedni błąd
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void toolStripButton3_Click(object sender, EventArgs e)
 		{
+			if (dataGridView1.RowCount < 2) { return; }
 			int selIndex = dataGridView1.CurrentCell.RowIndex;
 			for (int i = selIndex-1; i > 0; i--)
 			{
