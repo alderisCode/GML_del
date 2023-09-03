@@ -881,8 +881,8 @@ namespace GML_del
 		private void toolStripButton2_Click(object sender, EventArgs e)
         {
 			if (dataGridView1.RowCount < 2) { return; }
-			int selIndex = dataGridView1.CurrentCell.RowIndex;
-			for (int i=selIndex+1; i<dataGridView1.Rows.Count; i++)
+			//int selIndex = dataGridView1.CurrentCell.RowIndex;
+			for (int i= dataGridView1.FirstDisplayedCell.RowIndex + 1; i<dataGridView1.Rows.Count; i++)
             {
 				if (!(dataGridView1.Rows[i].Cells["Uwagi"].Value is null))
                 {
@@ -891,8 +891,9 @@ namespace GML_del
 						//Log("\n" + dataGridView1.Rows[i].Cells["Uwagi"].Value.ToString());
 						//dataGridView1.Rows[i].Selected = true;
 						dataGridView1.FirstDisplayedScrollingRowIndex = i;
+						statusLabel.Text = "Wyszukano kolejny błąd.";
 						Application.DoEvents();
-						break;
+						return;
 					}
 				}
             }
@@ -908,8 +909,8 @@ namespace GML_del
 		private void toolStripButton3_Click(object sender, EventArgs e)
 		{
 			if (dataGridView1.RowCount < 2) { return; }
-			int selIndex = dataGridView1.CurrentCell.RowIndex;
-			for (int i = selIndex-1; i > 0; i--)
+			//int selIndex = dataGridView1.CurrentCell.RowIndex;
+			for (int i = dataGridView1.FirstDisplayedCell.RowIndex-1; i > 0; i--)
 			{
 				if (!(dataGridView1.Rows[i].Cells["Uwagi"].Value is null))
 				{
@@ -918,8 +919,9 @@ namespace GML_del
 						//Log("\n" + dataGridView1.Rows[i].Cells["Uwagi"].Value.ToString());
 						//dataGridView1.Rows[i].Selected = true;
 						dataGridView1.FirstDisplayedScrollingRowIndex = i;
+						statusLabel.Text = "Wyszukano poprzedni błąd.";
 						Application.DoEvents();
-						break;
+						return;
 					}
 				}
 			}
